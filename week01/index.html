@@ -1,0 +1,726 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="日本観光サービス キャップストーンデザイン 2026年度後期 1週目 Orientation" />
+  <title>日本観光サービス キャップストーンデザイン｜1週目 Orientation</title>
+  <style>
+    :root {
+      --red: #e60023;
+      --canvas: #ffffff;
+      --soft: #fbfbf9;
+      --panel: #f4f4f0;
+      --line: #d8d8d1;
+      --ink: #11110f;
+      --body: #343430;
+      --muted: #686861;
+      --ash: #92928b;
+    }
+
+    * { box-sizing: border-box; }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+      background: var(--soft);
+      color: var(--ink);
+      font-family: "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    button { font: inherit; }
+
+    .deck {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .slide {
+      position: absolute;
+      inset: 0;
+      display: none;
+      width: 100vw;
+      height: 100vh;
+      height: 100svh;
+      padding: 7vh 7vw 6vh;
+      overflow: hidden;
+      background: var(--soft);
+    }
+
+    .slide.active { display: flex; }
+
+    .slide-inner {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: min(1280px, 100%);
+      height: 100%;
+      margin: 0 auto;
+    }
+
+    .topline {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .course-mark {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .dot {
+      flex: none;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--red);
+    }
+
+    .page-no {
+      color: var(--ash);
+      font-variant-numeric: tabular-nums;
+    }
+
+    h1,
+    h2,
+    h3,
+    p { margin: 0; }
+
+    h1,
+    h2,
+    .statement,
+    .prompt { text-wrap: balance; }
+
+    h1 {
+      font-size: clamp(50px, 6.2vw, 88px);
+      line-height: 1.04;
+      letter-spacing: -0.04em;
+      font-weight: 800;
+    }
+
+    h2 {
+      max-width: 1180px;
+      font-size: clamp(38px, 4.1vw, 64px);
+      line-height: 1.1;
+      letter-spacing: -0.035em;
+      font-weight: 800;
+    }
+
+    h3 {
+      font-size: clamp(24px, 2.1vw, 34px);
+      line-height: 1.25;
+      font-weight: 800;
+    }
+
+    .lead {
+      max-width: 980px;
+      margin-top: 28px;
+      color: var(--body);
+      font-size: clamp(22px, 2vw, 32px);
+      line-height: 1.45;
+    }
+
+    .sub {
+      max-width: 980px;
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: clamp(18px, 1.45vw, 24px);
+      line-height: 1.55;
+    }
+
+    .accent { color: var(--red); }
+
+    .center {
+      align-items: center;
+      text-align: center;
+    }
+
+    .hero-kicker {
+      margin-bottom: 22px;
+      color: var(--red);
+      font-size: 16px;
+      font-weight: 800;
+    }
+
+    .cover-title {
+      max-width: 1200px;
+      font-size: clamp(46px, 5.4vw, 82px);
+      line-height: 1.06;
+    }
+
+    .cover-topic {
+      margin-top: 26px;
+      color: var(--ink);
+      font-size: clamp(27px, 2.4vw, 38px);
+      line-height: 1.2;
+      font-weight: 800;
+    }
+
+    .cover-subtitle {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: clamp(18px, 1.55vw, 25px);
+      line-height: 1.45;
+    }
+
+    .cover-meta {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      color: var(--muted);
+      font-size: clamp(15px, 1.2vw, 19px);
+      line-height: 1.5;
+    }
+
+    .statement {
+      max-width: 1120px;
+      font-size: clamp(44px, 5.2vw, 76px);
+      line-height: 1.12;
+      letter-spacing: -0.04em;
+      font-weight: 800;
+    }
+
+    .goal-statement {
+      max-width: 1280px;
+      font-size: clamp(40px, 4.4vw, 68px);
+    }
+
+    .flow {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 52px;
+      font-size: clamp(22px, 2.1vw, 32px);
+      font-weight: 800;
+    }
+
+    .flow .arrow {
+      color: var(--ash);
+      font-weight: 400;
+    }
+
+    .columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: start;
+      margin-top: 44px;
+    }
+
+    .plain-block {
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+    }
+
+    .plain-block .label {
+      margin-bottom: 12px;
+      color: var(--red);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .plain-block .big {
+      font-size: clamp(24px, 2.2vw, 36px);
+      line-height: 1.35;
+      font-weight: 800;
+    }
+
+    .plain-block .small {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 20px;
+      line-height: 1.5;
+    }
+
+    .stack-lines {
+      display: grid;
+      gap: 5px;
+    }
+
+    .list {
+      display: grid;
+      gap: 16px;
+      max-width: 1080px;
+      margin: 36px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .list li {
+      color: var(--body);
+      font-size: clamp(21px, 1.7vw, 28px);
+      line-height: 1.45;
+    }
+
+    .list li::before {
+      content: "";
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      margin: 0 16px 4px 0;
+      border-radius: 50%;
+      background: var(--red);
+    }
+
+    .tools {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 42px;
+    }
+
+    .tool {
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+    }
+
+    .tool strong {
+      display: block;
+      margin-bottom: 12px;
+      font-size: 18px;
+    }
+
+    .tool p {
+      color: var(--body);
+      font-size: clamp(18px, 1.5vw, 22px);
+      line-height: 1.55;
+    }
+
+    .showcase {
+      display: grid;
+      grid-template-columns: 1.2fr 0.85fr 0.85fr;
+      gap: 16px;
+      min-height: 42vh;
+      margin-top: 40px;
+    }
+
+    .placeholder {
+      display: flex;
+      align-items: flex-end;
+      padding: 24px;
+      border: 1px solid #e4e4de;
+      border-radius: 14px;
+      background: var(--panel);
+      color: var(--muted);
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .placeholder.tall { min-height: 42vh; }
+    .placeholder.stack { min-height: 20vh; }
+
+    .evaluation {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 50px;
+    }
+
+    .eval {
+      min-height: 165px;
+      padding-top: 20px;
+      border-top: 2px solid var(--ink);
+    }
+
+    .eval .pct {
+      margin-bottom: 22px;
+      color: var(--red);
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    .eval h3 { font-size: 26px; }
+
+    .eval p {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.45;
+    }
+
+    .activity { background: var(--canvas); }
+
+    .activity-tag {
+      width: max-content;
+      margin-bottom: 28px;
+      color: var(--red);
+      font-size: 15px;
+      font-weight: 900;
+      letter-spacing: 0.05em;
+    }
+
+    .prompt {
+      max-width: 1120px;
+      font-size: clamp(42px, 5vw, 74px);
+      line-height: 1.12;
+      letter-spacing: -0.04em;
+      font-weight: 800;
+    }
+
+    .activity-note {
+      margin-top: 34px;
+      color: var(--body);
+      font-size: clamp(20px, 1.8vw, 28px);
+      line-height: 1.5;
+    }
+
+    .activity-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 22px;
+      margin-top: 38px;
+      color: var(--body);
+      font-size: clamp(18px, 1.55vw, 23px);
+      font-weight: 800;
+    }
+
+    .activity-options span:not(:last-child)::after {
+      content: "·";
+      margin-left: 22px;
+      color: var(--red);
+    }
+
+    .controls {
+      position: fixed;
+      right: 18px;
+      bottom: 16px;
+      z-index: 20;
+      display: flex;
+      gap: 8px;
+      opacity: 0.12;
+      transition: opacity 150ms ease;
+    }
+
+    .controls:hover,
+    .controls:focus-within { opacity: 1; }
+
+    .controls button {
+      width: 42px;
+      height: 42px;
+      padding: 0;
+      border: 0;
+      border-radius: 50%;
+      background: var(--panel);
+      color: var(--ink);
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 900px) {
+      .slide { padding: 7vh 6vw 5vh; }
+      .columns,
+      .tools { grid-template-columns: 1fr; gap: 20px; }
+      .showcase { grid-template-columns: 1fr 1fr; }
+      .placeholder.tall { grid-column: 1 / -1; min-height: 26vh; }
+      .evaluation { grid-template-columns: 1fr 1fr; }
+      .eval { min-height: auto; }
+      .cover-meta { font-size: 14px; }
+    }
+
+    @media (max-height: 700px) {
+      .slide { padding-top: 6vh; padding-bottom: 5vh; }
+      .flow { margin-top: 34px; }
+      .columns,
+      .tools,
+      .showcase,
+      .evaluation { margin-top: 30px; }
+      .list { margin-top: 26px; gap: 10px; }
+      .lead { margin-top: 20px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .controls { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="deck" aria-live="polite">
+    <section class="slide active" aria-label="1 / 12">
+      <div class="slide-inner center">
+        <div class="topline">
+          <div class="course-mark"><span class="dot"></span><span>聖公会大学</span></div>
+          <div class="page-no">01</div>
+        </div>
+        <div class="hero-kicker">2026年度 後期 ｜ 1週目</div>
+        <h1 class="cover-title">日本観光サービス<br />キャップストーンデザイン</h1>
+        <p class="cover-topic">Orientation</p>
+        <p class="cover-subtitle">日本学の視点を、観光サービスへ。</p>
+        <p class="cover-meta">担当 崔ナリ</p>
+      </div>
+    </section>
+
+    <section class="slide" aria-label="2 / 12">
+      <div class="slide-inner">
+        <div class="topline">
+          <div class="course-mark"><span class="dot"></span><span>この授業でやること</span></div>
+          <div class="page-no">02</div>
+        </div>
+        <div class="statement goal-statement">日本を学んだからこそ見えるものを、<br /><span class="accent">実際の観光サービスにする。</span></div>
+        <ul class="list">
+          <li>日本学の知識と視点から、旅行者のニーズや課題を見つける</li>
+          <li>その気づきを、サービスとして企画する</li>
+          <li>AIとデジタルツールを使い、実際の成果物まで作る</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="slide" aria-label="3 / 12">
+      <div class="slide-inner">
+        <div class="topline">
+          <div class="course-mark"><span class="dot"></span><span>AIで変わったこと</span></div>
+          <div class="page-no">03</div>
+        </div>
+        <h2>今は、アイデアで終わらない。</h2>
+        <p class="lead">AIを使えば、専門外の制作も自分たちで形にできる。</p>
+        <div class="flow" aria-label="企画からWeb制作までの流れ">
+          <span>企画</span><span class="arrow">→</span>
+          <span>コンテンツ</span><span class="arrow">→</span>
+          <span>画像</span><span class="arrow">→</span>
+          <span>デザイン</span><span class="arrow">→</span>
+          <span>Web</span>
+        </div>
+        <p class="sub"><strong>専門は日本学。</strong> でも、作るところまでできる。</p>
+      </div>
+    </section>
+
+    <section class="slide" aria-label="4 / 12">
+      <div class="slide-inner">
+        <div class="topline">
+          <div class="course-mark"><span class="dot"></span><span>一学期間のプロジェクト</span></div>
+          <div class="page-no">04</div>
+        </div>
+        <h2>調べる → 考える → 企画する → 作る → 改善する → 発表する</h2>
+        <div class="columns">
+          <div class="plain-block">
+            <div class="label">MID</div>
+            <div class="big">観光サービス企画書</div>
+            <div class="small">何を、誰のために、なぜ作るのか。</div>
+          </div>
+          <div class="plain-block">
+            <div class="label">FINAL</div>
+            <div class="big">最終成果物 ＋ プレゼンテーション</div>
+            <div class="small">企画したものを、実際に形にする。</div>
+          </div>
+        </div>
+        <p class="sub">課題：市場・ユーザー調査 ｜ チームプロジェクト中心</p>
+      </div>
+    </section>
+
+    <section class="slide" aria-label="5 / 12">
+      <div class="slide-inner">
+        <div class="topline">
+          <div class="course-mark"><span class="dot"></span><span>どんなものを作る？</span></div>
+          <div class="page-no">05</div>
+        </div>
+        <h2>最終的な形は、チームのアイデア次第。</h2>
+        <p class="sub">Webサービス / 観光コンテンツ / 旅行ガイド / 観光商品 / 体験プログラム / 情報サービス など</p>
+        <div class="showcase">
+          <div class="placeholder tall">[前学期の学生成果物｜メイン画面]</div>
+          <div class="placeholder stack">[学生成果物 02]</div>
+          <div class="placeholder stack">[学生成果物 03]</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" aria-label="6 / 12">
+      <div class="slide-inner">
+        <div class="topline">
+          <div class="course-mark"><span class="dot"></span><span>授業で扱うこと・使うツール</span></div>
+          <div class="page-no">06</div>
+        </div>
+        <h2>必要なときに、必要なものを使う。</h2>
+        <div class="tools">
+          <div class="tool">
+            <strong>観光・調査</strong>
+            <p>観光データ</p><p>SNS・レビュー</p><p>地図・地域情報</p><p>Google Forms</p>
+          </div>
+          <div class="tool">
+            <strong>企画・AI</strong>
+            <p>観光サービス事例</p><p>UX・サービス企画</p><p>ChatGPT</p><p>Gemini / Claude など</p>
+          </div>
+          <div class="tool">
+            <strong>制作</strong>
+            <p>Canva / Figma</p><p>HTML</p><p>GitHub</p><p>Web公開</p>
+          </div>
+        </div>
+        <p class="sub">ツールの使い方を覚えること自体が目的ではありません。</p>
+      </div>
+    </section>
+
+    <section class="slide" aria-label="7 / 12">
+      <div class="slide-inner center">
+        <div class="topline">
+          <div class="course-mark"><span class="dot"></span><span>AIについて</span></div>
+          <div class="page-no">07</div>
+        </div>
+        <div class="statement">AIはたくさん手伝ってくれる。でも、<span class="accent">何を・誰のために・なぜ作るか</span>を決めるのは私たち。</div>
+        <p class="sub">有料プランがあると便利ですが、必須ではありません。</p>
+      </div>
+    </section>
+
+    <section class="slide" aria-label="8 / 12">
+      <div class="slide-inner">
+        <div class="topline">
+          <div class="course-mark"><span class="dot"></span><span>チームで進めます</span></div>
+          <div class="page-no">08</div>
+        </div>
+        <h2>授業時間も、プロジェクトの時間です。</h2>
+        <div class="flow" aria-label="授業の流れ">
+          <span>短い講義</span><span class="arrow">→</span>
+          <span>事例</span><span class="arrow">→</span>
+          <span>チーム活動</span><span class="arrow">→</span>
+          <span>制作</span><span class="arrow">→</span>
+          <span>フィードバック</span>
+        </div>
+        <ul class="list">
+          <li>調べる・話し合う・選ぶ</li>
+          <li>企画する・作る・試す・直す</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="slide" aria-label="9 / 12">
+      <div class="slide-inner">
+        <div class="topline">
+          <div class="course-mark"><span class="dot"></span><span>評価</span></div>
+          <div class="page-no">09</div>
+        </div>
+        <h2>筆記試験はありません。</h2>
+        <div class="evaluation">
+          <div class="eval"><div class="pct">20%</div><h3>課題</h3><p>市場・ユーザー調査</p></div>
+          <div class="eval"><div class="pct">30%</div><h3>中間</h3><p>観光サービス企画書</p></div>
+          <div class="eval"><div class="pct">40%</div><h3>期末</h3><p>最終成果物・プレゼンテーション</p></div>
+          <div class="eval"><div class="pct">10%</div><h3>出席・参加</h3><p>授業・チーム活動への参加</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" aria-label="10 / 12">
+      <div class="slide-inner">
+        <div class="topline">
+          <div class="course-mark"><span class="dot"></span><span>授業の準備</span></div>
+          <div class="page-no">10</div>
+        </div>
+        <h2>毎週、持ってくるもの。</h2>
+        <div class="columns">
+          <div class="plain-block">
+            <div class="label">DEVICE</div>
+            <div class="big stack-lines"><p>ノートパソコン または タブレット</p><p>スマートフォン</p><p>充電器</p></div>
+            <div class="small">制作作業では、ノートパソコンを推奨します。</div>
+          </div>
+          <div class="plain-block">
+            <div class="label">ACCOUNT</div>
+            <div class="big stack-lines"><p>Google アカウント</p><p>AIサービスのアカウント</p></div>
+            <div class="small">授業の最初と最後にアンケートを実施します。</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide activity" aria-label="11 / 12">
+      <div class="slide-inner">
+        <div class="topline">
+          <div class="course-mark"><span class="dot"></span><span>Activity 01</span></div>
+          <div class="page-no">11</div>
+        </div>
+        <div class="activity-tag">WORD CLOUD</div>
+        <div class="prompt">「日本観光」と聞いて、何を思い浮かべますか？</div>
+        <p class="activity-note">思い浮かぶ言葉を <strong>3つ</strong> 入力してください。</p>
+      </div>
+    </section>
+
+    <section class="slide activity" aria-label="12 / 12">
+      <div class="slide-inner">
+        <div class="topline">
+          <div class="course-mark"><span class="dot"></span><span>Activity 02</span></div>
+          <div class="page-no">12</div>
+        </div>
+        <div class="activity-tag">MINI ACTIVITY</div>
+        <div class="prompt">日本人旅行者に紹介したい<br />韓国の「何か」を一つ。</div>
+        <div class="activity-options" aria-label="選択例">
+          <span>場所</span><span>店</span><span>食べ物</span><span>商品</span><span>体験</span><span>サービス</span>
+        </div>
+        <p class="activity-note"><strong>何を？　誰に？　なぜ？</strong>　簡単に紹介してみましょう。</p>
+      </div>
+    </section>
+  </main>
+
+  <div class="controls" aria-label="スライド操作">
+    <button id="prev" type="button" aria-label="前のスライド">←</button>
+    <button id="next" type="button" aria-label="次のスライド">→</button>
+  </div>
+
+  <script>
+    (() => {
+      const slides = [...document.querySelectorAll(".slide")];
+      let index = 0;
+
+      function show(target) {
+        index = Math.max(0, Math.min(target, slides.length - 1));
+        slides.forEach((slide, slideIndex) => {
+          const isActive = slideIndex === index;
+          slide.classList.toggle("active", isActive);
+          slide.setAttribute("aria-hidden", String(!isActive));
+        });
+        history.replaceState(null, "", `#${index + 1}`);
+      }
+
+      function next() { show(index + 1); }
+      function previous() { show(index - 1); }
+
+      document.getElementById("next").addEventListener("click", next);
+      document.getElementById("prev").addEventListener("click", previous);
+
+      document.addEventListener("keydown", (event) => {
+        if (["ArrowRight", "PageDown", " "].includes(event.key)) {
+          event.preventDefault();
+          next();
+        }
+        if (["ArrowLeft", "PageUp"].includes(event.key)) {
+          event.preventDefault();
+          previous();
+        }
+        if (event.key === "Home") {
+          event.preventDefault();
+          show(0);
+        }
+        if (event.key === "End") {
+          event.preventDefault();
+          show(slides.length - 1);
+        }
+        if (event.key.toLowerCase() === "f") {
+          if (!document.fullscreenElement) document.documentElement.requestFullscreen?.();
+          else document.exitFullscreen?.();
+        }
+      });
+
+      document.addEventListener("click", (event) => {
+        if (event.target.closest(".controls")) return;
+        const horizontalPosition = event.clientX / window.innerWidth;
+        if (horizontalPosition > 0.72) next();
+        else if (horizontalPosition < 0.28) previous();
+      });
+
+      const hash = Number.parseInt(location.hash.slice(1), 10);
+      if (Number.isFinite(hash)) index = Math.max(0, Math.min(hash - 1, slides.length - 1));
+      show(index);
+    })();
+  </script>
+</body>
+</html>
