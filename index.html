@@ -25,13 +25,19 @@
     }
 
     main {
-      width: min(1180px, calc(100% - 12vw));
+      width: min(1360px, calc(100% - 96px));
       min-height: 100svh;
       margin: 0 auto;
-      padding: 8vh 0;
+      padding: 48px 0 36px;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+    }
+
+    .course-header {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 48px;
+      align-items: end;
     }
 
     .eyebrow {
@@ -52,42 +58,46 @@
     }
 
     h1 {
-      max-width: 980px;
-      margin: 8vh 0 0;
-      font-size: clamp(46px, 6vw, 86px);
-      line-height: 1.08;
-      letter-spacing: -0.04em;
+      max-width: 780px;
+      margin: 30px 0 0;
+      font-size: clamp(40px, 3.4vw, 56px);
+      line-height: 1.1;
+      letter-spacing: -0.035em;
       text-wrap: balance;
     }
 
     .term {
-      margin: 24px 0 0;
+      margin: 0 0 6px;
       color: var(--muted);
-      font-size: clamp(20px, 2vw, 30px);
+      font-size: clamp(17px, 1.3vw, 20px);
+      white-space: nowrap;
     }
 
     nav {
-      margin-top: 10vh;
-      border-top: 1px solid var(--line);
+      margin-top: 54px;
     }
 
     .week-list {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      column-gap: 44px;
       margin: 0;
       padding: 0;
       list-style: none;
     }
 
     .week-row {
-      border-bottom: 1px solid var(--line);
+      border-top: 1px solid var(--line);
     }
 
     .week-link,
     .week-pending {
       display: grid;
-      grid-template-columns: 110px 1fr auto;
-      gap: 28px;
+      grid-template-columns: 72px minmax(0, 1fr) auto;
+      gap: 14px;
       align-items: center;
-      padding: 26px 0;
+      min-height: 64px;
+      padding: 14px 0;
     }
 
     .week-link {
@@ -112,12 +122,12 @@
     }
 
     .topic {
-      font-size: clamp(24px, 2.5vw, 38px);
+      font-size: clamp(19px, 1.5vw, 24px);
       font-weight: 750;
       transition: color 150ms ease;
     }
 
-    .arrow { color: var(--muted); font-size: 28px; }
+    .arrow { color: var(--muted); font-size: 22px; }
 
     .status {
       color: var(--muted);
@@ -126,25 +136,47 @@
     }
 
     footer {
-      margin-top: 8vh;
+      margin-top: auto;
+      padding-top: 28px;
       color: var(--muted);
       font-size: 15px;
     }
 
+    @media (max-width: 1100px) {
+      main { width: min(100% - 64px, 1360px); }
+      .course-header { grid-template-columns: 1fr; gap: 14px; }
+      .term { margin: 0; }
+      .week-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
     @media (max-width: 680px) {
-      main { width: min(100% - 48px, 1180px); }
+      main {
+        width: min(100% - 48px, 1360px);
+        padding: 32px 0 28px;
+      }
+      h1 {
+        margin-top: 24px;
+        font-size: clamp(35px, 11vw, 46px);
+      }
+      nav { margin-top: 40px; }
+      .week-list { grid-template-columns: 1fr; }
       .week-link,
       .week-pending { grid-template-columns: 1fr auto; gap: 14px; }
       .week { grid-column: 1 / -1; }
+      footer { padding-top: 40px; }
     }
   </style>
 </head>
 <body>
   <main>
     <div>
-      <div class="eyebrow">聖公会大学</div>
-      <h1>日本観光サービス<br />キャップストーンデザイン</h1>
-      <p class="term">2026年度 後期 ｜ 担当 崔ナリ</p>
+      <header class="course-header">
+        <div>
+          <div class="eyebrow">聖公会大学</div>
+          <h1>日本観光サービス<br />キャップストーンデザイン</h1>
+        </div>
+        <p class="term">2026年度 後期 ｜ 担当 崔ナリ</p>
+      </header>
 
       <nav aria-label="週別講義資料">
         <ol class="week-list">
