@@ -127,8 +127,8 @@
     }
 
     .guide-title {
-      font-size: clamp(34px, 3.4vw, 52px);
-      letter-spacing: -0.025em;
+      font-size: clamp(42px, 4.2vw, 64px);
+      letter-spacing: -0.03em;
     }
 
     .lead {
@@ -143,7 +143,7 @@
       max-width: 980px;
       margin-top: 20px;
       color: var(--muted);
-      font-size: clamp(18px, 1.45vw, 24px);
+      font-size: clamp(21px, 1.7vw, 26px);
       line-height: 1.55;
     }
 
@@ -209,9 +209,9 @@
       display: flex;
       align-items: center;
       flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 52px;
-      font-size: clamp(22px, 2.1vw, 32px);
+      gap: 16px;
+      margin-top: 44px;
+      font-size: clamp(26px, 2.5vw, 38px);
       font-weight: 800;
     }
 
@@ -221,33 +221,70 @@
     }
 
     .semester-flow {
-      gap: 10px;
-      margin-top: 28px;
-      font-size: clamp(18px, 1.65vw, 25px);
+      gap: 12px;
+      margin-top: 34px;
+      font-size: clamp(24px, 2.1vw, 32px);
+    }
+
+    .content-panel {
+      max-width: 1120px;
+      margin-top: 36px;
+      padding: 30px 34px;
+      border: 1px solid #e4e4dd;
+      border-radius: 16px;
+      background: var(--panel);
+    }
+
+    .content-panel .list { margin-top: 0; }
+    .content-panel .sub { margin-top: 22px; }
+
+    .step-flow {
+      gap: 12px;
+      margin-top: 38px;
+    }
+
+    .step-flow > span:not(.arrow) {
+      padding: 14px 18px;
+      border: 1px solid #e2e2db;
+      border-radius: 12px;
+      background: var(--panel);
+    }
+
+    .flow-band {
+      width: max-content;
+      max-width: 100%;
+      margin-top: 38px;
+      padding: 22px 26px;
+      border: 1px solid #e4e4dd;
+      border-radius: 14px;
+      background: var(--panel);
     }
 
     .columns {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 56px;
-      align-items: start;
-      margin-top: 44px;
+      gap: 24px;
+      align-items: stretch;
+      margin-top: 38px;
     }
 
     .plain-block {
-      padding-top: 20px;
-      border-top: 1px solid var(--line);
+      min-height: 170px;
+      padding: 28px 30px;
+      border: 1px solid #e4e4dd;
+      border-radius: 16px;
+      background: var(--panel);
     }
 
     .plain-block .label {
       margin-bottom: 12px;
       color: var(--red);
-      font-size: 14px;
+      font-size: 16px;
       font-weight: 800;
     }
 
     .plain-block .big {
-      font-size: clamp(24px, 2.2vw, 36px);
+      font-size: clamp(30px, 2.8vw, 42px);
       line-height: 1.35;
       font-weight: 800;
     }
@@ -266,16 +303,16 @@
 
     .list {
       display: grid;
-      gap: 16px;
+      gap: 20px;
       max-width: 1080px;
-      margin: 36px 0 0;
+      margin: 40px 0 0;
       padding: 0;
       list-style: none;
     }
 
     .list li {
       color: var(--body);
-      font-size: clamp(21px, 1.7vw, 28px);
+      font-size: clamp(25px, 2.1vw, 32px);
       line-height: 1.45;
     }
 
@@ -292,8 +329,12 @@
     .tools {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
-      margin-top: 42px;
+      gap: 32px;
+      margin-top: 38px;
+      padding: 28px 30px;
+      border: 1px solid #e4e4dd;
+      border-radius: 16px;
+      background: var(--panel);
     }
 
     .tool {
@@ -304,13 +345,13 @@
     .tool strong {
       display: block;
       margin-bottom: 12px;
-      font-size: 18px;
+      font-size: 22px;
     }
 
     .tool p {
       color: var(--body);
-      font-size: clamp(18px, 1.5vw, 22px);
-      line-height: 1.55;
+      font-size: clamp(21px, 1.7vw, 26px);
+      line-height: 1.5;
     }
 
     .showcase {
@@ -341,6 +382,10 @@
       grid-template-columns: 1fr;
       max-width: 1050px;
       margin-top: 32px;
+      padding: 12px 30px;
+      border: 1px solid #e4e4dd;
+      border-radius: 16px;
+      background: var(--panel);
     }
 
     .eval {
@@ -357,14 +402,14 @@
       grid-row: 1;
       margin: 0;
       color: var(--red);
-      font-size: 22px;
+      font-size: 26px;
       font-weight: 800;
     }
 
     .eval h3 {
       grid-column: 2;
       grid-row: 1;
-      font-size: 25px;
+      font-size: 29px;
     }
 
     .eval p {
@@ -372,7 +417,7 @@
       grid-row: 1;
       margin: 0;
       color: var(--muted);
-      font-size: 20px;
+      font-size: 23px;
       line-height: 1.45;
     }
 
@@ -492,26 +537,28 @@
     <section class="slide" aria-label="2 / 12">
       <div class="slide-inner">
         <div class="topline">
-          <div class="course-mark"><span class="dot"></span><span>Orientation</span></div>
+          <div class="course-mark"><span class="dot"></span><span>授業概要</span></div>
           <div class="page-no">02</div>
         </div>
         <h2 class="guide-title">授業の目的</h2>
-        <ul class="list">
-          <li>日本学の知識・視点から、旅行者のニーズや課題を発見</li>
-          <li>観光サービスの企画</li>
-          <li>AI・デジタルツールを使った成果物制作</li>
-        </ul>
+        <div class="content-panel">
+          <ul class="list">
+            <li>日本学の知識・視点から、旅行者のニーズや課題を発見</li>
+            <li>観光サービスの企画</li>
+            <li>AI・デジタルツールを使った成果物制作</li>
+          </ul>
+        </div>
       </div>
     </section>
 
     <section class="slide" aria-label="3 / 12">
       <div class="slide-inner">
         <div class="topline">
-          <div class="course-mark"><span class="dot"></span><span>Orientation</span></div>
+          <div class="course-mark"><span class="dot"></span><span>授業概要</span></div>
           <div class="page-no">03</div>
         </div>
         <h2 class="guide-title">AIでできること</h2>
-        <div class="flow" aria-label="企画からWeb制作までの流れ">
+        <div class="flow step-flow" aria-label="企画からWeb制作までの流れ">
           <span>企画</span><span class="arrow">→</span>
           <span>コンテンツ</span><span class="arrow">→</span>
           <span>画像</span><span class="arrow">→</span>
@@ -524,7 +571,7 @@
     <section class="slide" aria-label="4 / 12">
       <div class="slide-inner">
         <div class="topline">
-          <div class="course-mark"><span class="dot"></span><span>Orientation</span></div>
+          <div class="course-mark"><span class="dot"></span><span>プロジェクト</span></div>
           <div class="page-no">04</div>
         </div>
         <h2 class="guide-title">一学期間の流れ</h2>
@@ -543,7 +590,7 @@
     <section class="slide" aria-label="5 / 12">
       <div class="slide-inner">
         <div class="topline">
-          <div class="course-mark"><span class="dot"></span><span>Orientation</span></div>
+          <div class="course-mark"><span class="dot"></span><span>プロジェクト</span></div>
           <div class="page-no">05</div>
         </div>
         <h2 class="guide-title">中間・期末</h2>
@@ -554,7 +601,7 @@
           </div>
           <div class="plain-block">
             <div class="label">期末</div>
-            <div class="big">最終成果物 ＋ プレゼンテーション</div>
+            <div class="big">最終成果物 ＋<br />プレゼンテーション</div>
           </div>
         </div>
       </div>
@@ -563,7 +610,7 @@
     <section class="slide" aria-label="6 / 12">
       <div class="slide-inner">
         <div class="topline">
-          <div class="course-mark"><span class="dot"></span><span>Orientation</span></div>
+          <div class="course-mark"><span class="dot"></span><span>プロジェクト</span></div>
           <div class="page-no">06</div>
         </div>
         <h2 class="guide-title">最終成果物の例</h2>
@@ -579,7 +626,7 @@
     <section class="slide" aria-label="7 / 12">
       <div class="slide-inner">
         <div class="topline">
-          <div class="course-mark"><span class="dot"></span><span>Orientation</span></div>
+          <div class="course-mark"><span class="dot"></span><span>授業案内</span></div>
           <div class="page-no">07</div>
         </div>
         <h2 class="guide-title">授業で使うもの</h2>
@@ -604,11 +651,11 @@
     <section class="slide" aria-label="8 / 12">
       <div class="slide-inner">
         <div class="topline">
-          <div class="course-mark"><span class="dot"></span><span>Orientation</span></div>
+          <div class="course-mark"><span class="dot"></span><span>授業案内</span></div>
           <div class="page-no">08</div>
         </div>
         <h2 class="guide-title">授業の進め方</h2>
-        <div class="flow" aria-label="授業の流れ">
+        <div class="flow flow-band" aria-label="授業の流れ">
           <span>短い講義</span><span class="arrow">→</span>
           <span>事例</span><span class="arrow">→</span>
           <span>チーム活動</span><span class="arrow">→</span>
@@ -622,7 +669,7 @@
     <section class="slide" aria-label="9 / 12">
       <div class="slide-inner">
         <div class="topline">
-          <div class="course-mark"><span class="dot"></span><span>Orientation</span></div>
+          <div class="course-mark"><span class="dot"></span><span>授業案内</span></div>
           <div class="page-no">09</div>
         </div>
         <h2 class="guide-title">評価方法</h2>
@@ -639,16 +686,18 @@
     <section class="slide" aria-label="10 / 12">
       <div class="slide-inner">
         <div class="topline">
-          <div class="course-mark"><span class="dot"></span><span>Orientation</span></div>
+          <div class="course-mark"><span class="dot"></span><span>授業案内</span></div>
           <div class="page-no">10</div>
         </div>
         <h2 class="guide-title">授業の準備</h2>
-        <ul class="list">
-          <li>ノートパソコン（推奨）またはタブレット</li>
-          <li>スマートフォン・充電器</li>
-          <li>Google・AIサービスのアカウント</li>
-        </ul>
-        <p class="sub">アンケート：授業開始時・終了時</p>
+        <div class="content-panel">
+          <ul class="list">
+            <li>ノートパソコン（推奨）またはタブレット</li>
+            <li>スマートフォン・充電器</li>
+            <li>Google・AIサービスのアカウント</li>
+          </ul>
+          <p class="sub">アンケート：授業開始時・終了時</p>
+        </div>
       </div>
     </section>
 
