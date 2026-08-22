@@ -220,6 +220,12 @@
       font-weight: 400;
     }
 
+    .semester-flow {
+      gap: 10px;
+      margin-top: 28px;
+      font-size: clamp(18px, 1.65vw, 25px);
+    }
+
     .columns {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -332,23 +338,22 @@
 
     .evaluation {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0 56px;
-      max-width: 1100px;
-      margin-top: 40px;
+      grid-template-columns: 1fr;
+      max-width: 1050px;
+      margin-top: 32px;
     }
 
     .eval {
       display: grid;
-      grid-template-columns: 1fr auto;
+      grid-template-columns: 90px 180px 1fr;
       align-items: baseline;
       min-height: 0;
-      padding: 18px 0;
+      padding: 15px 0;
       border-top: 1px solid var(--line);
     }
 
     .eval .pct {
-      grid-column: 2;
+      grid-column: 1;
       grid-row: 1;
       margin: 0;
       color: var(--red);
@@ -357,16 +362,17 @@
     }
 
     .eval h3 {
-      grid-column: 1;
+      grid-column: 2;
       grid-row: 1;
       font-size: 25px;
     }
 
     .eval p {
-      grid-column: 1 / -1;
-      margin-top: 5px;
+      grid-column: 3;
+      grid-row: 1;
+      margin: 0;
       color: var(--muted);
-      font-size: 18px;
+      font-size: 20px;
       line-height: 1.45;
     }
 
@@ -444,8 +450,11 @@
       .tools { grid-template-columns: 1fr; gap: 20px; }
       .showcase { grid-template-columns: 1fr 1fr; }
       .placeholder.tall { grid-column: 1 / -1; min-height: 26vh; }
-      .evaluation { grid-template-columns: 1fr 1fr; }
-      .eval { min-height: auto; }
+      .evaluation { grid-template-columns: 1fr; }
+      .eval {
+        grid-template-columns: 72px 120px 1fr;
+        min-height: auto;
+      }
       .cover-meta { font-size: 14px; }
     }
 
@@ -467,7 +476,7 @@
 </head>
 <body>
   <main class="deck" aria-live="polite">
-    <section class="slide active" aria-label="1 / 11">
+    <section class="slide active" aria-label="1 / 12">
       <div class="slide-inner center">
         <div class="topline">
           <div class="course-mark"><span class="dot"></span><span>聖公会大学</span></div>
@@ -476,34 +485,32 @@
         <div class="hero-kicker">2026年度 後期 ｜ 1週目</div>
         <h1 class="cover-title">日本観光サービス<br />キャップストーンデザイン</h1>
         <p class="cover-topic">Orientation</p>
-        <p class="cover-subtitle">日本学の視点を、観光サービスへ。</p>
         <p class="cover-meta">担当 崔ナリ</p>
       </div>
     </section>
 
-    <section class="slide" aria-label="2 / 11">
+    <section class="slide" aria-label="2 / 12">
       <div class="slide-inner">
         <div class="topline">
-          <div class="course-mark"><span class="dot"></span><span>この授業でやること</span></div>
+          <div class="course-mark"><span class="dot"></span><span>Orientation</span></div>
           <div class="page-no">02</div>
         </div>
-        <div class="statement goal-statement">日本を学んだからこそ見えるものを、<br /><span class="accent">実際の観光サービスにする。</span></div>
+        <h2 class="guide-title">授業の目的</h2>
         <ul class="list">
-          <li>日本学の知識と視点から、旅行者のニーズや課題を見つける</li>
-          <li>その気づきを、サービスとして企画する</li>
-          <li>AIとデジタルツールを使い、実際の成果物まで作る</li>
+          <li>日本学の知識・視点から、旅行者のニーズや課題を発見</li>
+          <li>観光サービスの企画</li>
+          <li>AI・デジタルツールを使った成果物制作</li>
         </ul>
       </div>
     </section>
 
-    <section class="slide" aria-label="3 / 11">
+    <section class="slide" aria-label="3 / 12">
       <div class="slide-inner">
         <div class="topline">
-          <div class="course-mark"><span class="dot"></span><span>AIで変わったこと</span></div>
+          <div class="course-mark"><span class="dot"></span><span>Orientation</span></div>
           <div class="page-no">03</div>
         </div>
-        <h2>今は、アイデアで終わらない。</h2>
-        <p class="lead">AIを使えば、専門外の制作も自分たちで形にできる。</p>
+        <h2 class="guide-title">AIでできること</h2>
         <div class="flow" aria-label="企画からWeb制作までの流れ">
           <span>企画</span><span class="arrow">→</span>
           <span>コンテンツ</span><span class="arrow">→</span>
@@ -511,40 +518,55 @@
           <span>デザイン</span><span class="arrow">→</span>
           <span>Web</span>
         </div>
-        <p class="sub"><strong>専門は日本学。</strong> でも、作るところまでできる。</p>
       </div>
     </section>
 
-    <section class="slide" aria-label="4 / 11">
+    <section class="slide" aria-label="4 / 12">
       <div class="slide-inner">
         <div class="topline">
-          <div class="course-mark"><span class="dot"></span><span>一学期間のプロジェクト</span></div>
+          <div class="course-mark"><span class="dot"></span><span>Orientation</span></div>
           <div class="page-no">04</div>
         </div>
-        <h2>調べる → 考える → 企画する → 作る → 改善する → 発表する</h2>
-        <div class="columns">
-          <div class="plain-block">
-            <div class="label">MID</div>
-            <div class="big">観光サービス企画書</div>
-            <div class="small">何を、誰のために、なぜ作るのか。</div>
-          </div>
-          <div class="plain-block">
-            <div class="label">FINAL</div>
-            <div class="big">最終成果物 ＋ プレゼンテーション</div>
-            <div class="small">企画したものを、実際に形にする。</div>
-          </div>
+        <h2 class="guide-title">一学期間の流れ</h2>
+        <div class="flow semester-flow" aria-label="一学期間の流れ">
+          <span>調べる</span><span class="arrow">→</span>
+          <span>考える</span><span class="arrow">→</span>
+          <span>企画する</span><span class="arrow">→</span>
+          <span>作る</span><span class="arrow">→</span>
+          <span>改善する</span><span class="arrow">→</span>
+          <span>発表する</span>
         </div>
         <p class="sub">課題：市場・ユーザー調査 ｜ チームプロジェクト中心</p>
       </div>
     </section>
 
-    <section class="slide" aria-label="5 / 11">
+    <section class="slide" aria-label="5 / 12">
       <div class="slide-inner">
         <div class="topline">
-          <div class="course-mark"><span class="dot"></span><span>どんなものを作る？</span></div>
+          <div class="course-mark"><span class="dot"></span><span>Orientation</span></div>
           <div class="page-no">05</div>
         </div>
-        <h2>最終的な形は、チームのアイデア次第。</h2>
+        <h2 class="guide-title">中間・期末</h2>
+        <div class="columns">
+          <div class="plain-block">
+            <div class="label">中間</div>
+            <div class="big">観光サービス企画書</div>
+          </div>
+          <div class="plain-block">
+            <div class="label">期末</div>
+            <div class="big">最終成果物 ＋ プレゼンテーション</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" aria-label="6 / 12">
+      <div class="slide-inner">
+        <div class="topline">
+          <div class="course-mark"><span class="dot"></span><span>Orientation</span></div>
+          <div class="page-no">06</div>
+        </div>
+        <h2 class="guide-title">最終成果物の例</h2>
         <p class="sub">Webサービス / 観光コンテンツ / 旅行ガイド / 観光商品 / 体験プログラム / 情報サービス など</p>
         <div class="showcase">
           <div class="placeholder tall">[前学期の学生成果物｜メイン画面]</div>
@@ -554,13 +576,13 @@
       </div>
     </section>
 
-    <section class="slide" aria-label="6 / 11">
+    <section class="slide" aria-label="7 / 12">
       <div class="slide-inner">
         <div class="topline">
-          <div class="course-mark"><span class="dot"></span><span>授業で使うもの</span></div>
-          <div class="page-no">06</div>
+          <div class="course-mark"><span class="dot"></span><span>Orientation</span></div>
+          <div class="page-no">07</div>
         </div>
-        <h2 class="guide-title">授業では、こんなものを使います。</h2>
+        <h2 class="guide-title">授業で使うもの</h2>
         <div class="tools">
           <div class="tool">
             <strong>観光・調査</strong>
@@ -575,17 +597,17 @@
             <p>Canva / Figma</p><p>HTML</p><p>GitHub</p><p>Web公開</p>
           </div>
         </div>
-        <p class="sub">AIも制作を手伝う道具のひとつ。何を作るかは自分たちで決めます。有料プランは必須ではありません。</p>
+        <p class="sub">AI：制作補助として使用 ｜ テーマ・対象・目的：チームで決定 ｜ 有料プラン：任意</p>
       </div>
     </section>
 
-    <section class="slide" aria-label="7 / 11">
+    <section class="slide" aria-label="8 / 12">
       <div class="slide-inner">
         <div class="topline">
-          <div class="course-mark"><span class="dot"></span><span>授業の進め方</span></div>
-          <div class="page-no">07</div>
+          <div class="course-mark"><span class="dot"></span><span>Orientation</span></div>
+          <div class="page-no">08</div>
         </div>
-        <h2 class="guide-title">説明のあとは、チームで作業します。</h2>
+        <h2 class="guide-title">授業の進め方</h2>
         <div class="flow" aria-label="授業の流れ">
           <span>短い講義</span><span class="arrow">→</span>
           <span>事例</span><span class="arrow">→</span>
@@ -593,73 +615,67 @@
           <span>制作</span><span class="arrow">→</span>
           <span>フィードバック</span>
         </div>
-        <p class="sub">授業時間の多くは、調査・相談・制作に使います。</p>
+        <p class="sub">授業時間：調査・相談・制作が中心</p>
       </div>
     </section>
 
-    <section class="slide" aria-label="8 / 11">
+    <section class="slide" aria-label="9 / 12">
       <div class="slide-inner">
         <div class="topline">
-          <div class="course-mark"><span class="dot"></span><span>評価方法</span></div>
-          <div class="page-no">08</div>
+          <div class="course-mark"><span class="dot"></span><span>Orientation</span></div>
+          <div class="page-no">09</div>
         </div>
-        <h2 class="guide-title">評価方法は、次のとおりです。</h2>
+        <h2 class="guide-title">評価方法</h2>
         <div class="evaluation">
           <div class="eval"><div class="pct">20%</div><h3>課題</h3><p>市場・ユーザー調査</p></div>
           <div class="eval"><div class="pct">30%</div><h3>中間</h3><p>観光サービス企画書</p></div>
           <div class="eval"><div class="pct">40%</div><h3>期末</h3><p>最終成果物・プレゼンテーション</p></div>
           <div class="eval"><div class="pct">10%</div><h3>出席・参加</h3><p>授業・チーム活動への参加</p></div>
         </div>
-        <p class="sub">筆記試験はありません。</p>
+        <p class="sub">筆記試験：なし</p>
       </div>
     </section>
 
-    <section class="slide" aria-label="9 / 11">
+    <section class="slide" aria-label="10 / 12">
       <div class="slide-inner">
         <div class="topline">
-          <div class="course-mark"><span class="dot"></span><span>授業の準備</span></div>
-          <div class="page-no">09</div>
+          <div class="course-mark"><span class="dot"></span><span>Orientation</span></div>
+          <div class="page-no">10</div>
         </div>
-        <h2 class="guide-title">授業に持ってくるもの</h2>
-        <div class="columns">
-          <div class="plain-block">
-            <h3>持ち物</h3>
-            <div class="big stack-lines"><p>ノートパソコン または タブレット</p><p>スマートフォン</p><p>充電器</p></div>
-            <div class="small">制作作業では、ノートパソコンを推奨します。</div>
-          </div>
-          <div class="plain-block">
-            <h3>アカウント</h3>
-            <div class="big stack-lines"><p>Google アカウント</p><p>AIサービスのアカウント</p></div>
-            <div class="small">授業の最初と最後にアンケートを実施します。</div>
-          </div>
-        </div>
+        <h2 class="guide-title">授業の準備</h2>
+        <ul class="list">
+          <li>ノートパソコン（推奨）またはタブレット</li>
+          <li>スマートフォン・充電器</li>
+          <li>Google・AIサービスのアカウント</li>
+        </ul>
+        <p class="sub">アンケート：授業開始時・終了時</p>
       </div>
     </section>
 
-    <section class="slide activity" aria-label="10 / 11">
+    <section class="slide activity" aria-label="11 / 12">
       <div class="slide-inner">
         <div class="topline">
           <div class="course-mark"><span class="dot"></span><span>Activity 01</span></div>
-          <div class="page-no">10</div>
+          <div class="page-no">11</div>
         </div>
         <div class="activity-tag">WORD CLOUD</div>
         <div class="prompt">「日本観光」と聞いて、何を思い浮かべますか？</div>
-        <p class="activity-note">思い浮かぶ言葉を <strong>3つ</strong> 入力してください。</p>
+        <p class="activity-note">思い浮かぶ言葉を <strong>3つ</strong> 入力</p>
       </div>
     </section>
 
-    <section class="slide activity" aria-label="11 / 11">
+    <section class="slide activity" aria-label="12 / 12">
       <div class="slide-inner">
         <div class="topline">
           <div class="course-mark"><span class="dot"></span><span>Activity 02</span></div>
-          <div class="page-no">11</div>
+          <div class="page-no">12</div>
         </div>
         <div class="activity-tag">MINI ACTIVITY</div>
         <div class="prompt">日本人旅行者に紹介したい<br />韓国の「何か」を一つ。</div>
         <div class="activity-options" aria-label="選択例">
           <span>場所</span><span>店</span><span>食べ物</span><span>商品</span><span>体験</span><span>サービス</span>
         </div>
-        <p class="activity-note"><strong>何を？　誰に？　なぜ？</strong>　簡単に紹介してみましょう。</p>
+        <p class="activity-note"><strong>何を？　誰に？　なぜ？</strong>　簡単に紹介</p>
       </div>
     </section>
   </main>
