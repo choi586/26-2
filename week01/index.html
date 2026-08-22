@@ -399,28 +399,115 @@
       line-height: 1.5;
     }
 
-    .showcase {
+    .project-overview {
       display: grid;
-      grid-template-columns: 1.2fr 0.85fr 0.85fr;
-      gap: 16px;
-      min-height: 42vh;
-      margin-top: 40px;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      max-width: 1160px;
+      margin-top: 30px;
     }
 
-    .placeholder {
-      display: flex;
-      align-items: flex-end;
-      padding: 24px;
-      border: 1px solid #e4e4de;
-      border-radius: 14px;
+    .project-item {
+      display: grid;
+      grid-template-columns: 46px 1fr;
+      gap: 16px;
+      min-height: 146px;
+      padding: 24px 26px;
+      border: 1px solid #e4e4dd;
+      border-radius: 16px;
       background: var(--panel);
-      color: var(--muted);
+    }
+
+    .project-index {
+      padding-top: 5px;
+      color: var(--red);
       font-size: 16px;
+      font-weight: 900;
+    }
+
+    .project-item h3 {
+      font-size: clamp(24px, 2vw, 31px);
+      line-height: 1.25;
+    }
+
+    .project-item p {
+      margin-top: 9px;
+      color: var(--muted);
+      font-size: clamp(18px, 1.45vw, 22px);
+      line-height: 1.45;
+    }
+
+    .project-status {
+      display: inline-block;
+      margin-top: 10px;
+      color: var(--ash);
+      font-size: 15px;
       font-weight: 700;
     }
 
-    .placeholder.tall { min-height: 42vh; }
-    .placeholder.stack { min-height: 20vh; }
+    .result-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      max-width: 1180px;
+      margin-top: 24px;
+    }
+
+    .result-card {
+      min-width: 0;
+      overflow: hidden;
+      border: 1px solid #deded7;
+      border-radius: 16px;
+      background: var(--canvas);
+    }
+
+    .result-visual {
+      height: clamp(250px, 39vh, 410px);
+      overflow: hidden;
+      border-bottom: 1px solid #e5e5df;
+      background: #ecece7;
+    }
+
+    .result-visual img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .result-caption {
+      padding: 17px 20px 19px;
+    }
+
+    .result-heading {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .result-heading h3 {
+      font-size: clamp(23px, 1.9vw, 29px);
+    }
+
+    .result-link {
+      flex: none;
+      color: var(--red);
+      font-size: 15px;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .result-link:hover,
+    .result-link:focus-visible { text-decoration: underline; }
+
+    .result-caption p {
+      margin-top: 7px;
+      color: var(--muted);
+      font-size: clamp(17px, 1.35vw, 21px);
+      line-height: 1.42;
+    }
 
     .evaluation {
       display: grid;
@@ -538,8 +625,10 @@
       .slide { padding: 7vh 6vw 5vh; }
       .columns,
       .tools { grid-template-columns: 1fr; gap: 20px; }
-      .showcase { grid-template-columns: 1fr 1fr; }
-      .placeholder.tall { grid-column: 1 / -1; min-height: 26vh; }
+      .project-overview,
+      .result-grid { grid-template-columns: 1fr; }
+      .project-item { min-height: auto; }
+      .result-visual { height: 25vh; }
       .evaluation { grid-template-columns: 1fr; }
       .eval {
         grid-template-columns: 72px 120px 1fr;
@@ -556,8 +645,12 @@
       .flow { margin-top: 34px; }
       .columns,
       .tools,
-      .showcase,
+      .project-overview,
+      .result-grid,
       .evaluation { margin-top: 30px; }
+      .project-item { min-height: 125px; padding: 18px 22px; }
+      .result-visual { height: 34vh; }
+      .result-caption { padding-top: 13px; padding-bottom: 14px; }
       .list { margin-top: 26px; gap: 10px; }
       .lead { margin-top: 20px; }
     }
@@ -569,7 +662,7 @@
 </head>
 <body>
   <main class="deck" aria-live="polite">
-    <section class="slide active" aria-label="1 / 12">
+    <section class="slide active" aria-label="1 / 14">
       <div class="slide-inner center">
         <div class="topline">
           <div class="course-mark"><span class="dot"></span><span>聖公会大学</span></div>
@@ -582,7 +675,7 @@
       </div>
     </section>
 
-    <section class="slide" aria-label="2 / 12">
+    <section class="slide" aria-label="2 / 14">
       <div class="slide-inner">
         <div class="topline">
           <div class="course-mark"><span class="dot"></span><span>授業概要</span></div>
@@ -599,7 +692,7 @@
       </div>
     </section>
 
-    <section class="slide" aria-label="3 / 12">
+    <section class="slide" aria-label="3 / 14">
       <div class="slide-inner">
         <div class="topline">
           <div class="course-mark"><span class="dot"></span><span>授業概要</span></div>
@@ -624,7 +717,7 @@
       </div>
     </section>
 
-    <section class="slide" aria-label="4 / 12">
+    <section class="slide" aria-label="4 / 14">
       <div class="slide-inner">
         <div class="topline">
           <div class="course-mark"><span class="dot"></span><span>プロジェクト</span></div>
@@ -643,7 +736,7 @@
       </div>
     </section>
 
-    <section class="slide" aria-label="5 / 12">
+    <section class="slide" aria-label="5 / 14">
       <div class="slide-inner">
         <div class="topline">
           <div class="course-mark"><span class="dot"></span><span>プロジェクト</span></div>
@@ -663,27 +756,114 @@
       </div>
     </section>
 
-    <section class="slide" aria-label="6 / 12">
+    <section class="slide" aria-label="6 / 14">
       <div class="slide-inner">
         <div class="topline">
           <div class="course-mark"><span class="dot"></span><span>プロジェクト</span></div>
           <div class="page-no">06</div>
         </div>
-        <h2 class="guide-title">最終成果物の例</h2>
-        <p class="sub">Webサービス / 観光コンテンツ / 旅行ガイド / 観光商品 / 体験プログラム / 情報サービス など</p>
-        <div class="showcase">
-          <div class="placeholder tall">[前学期の学生成果物｜メイン画面]</div>
-          <div class="placeholder stack">[学生成果物 02]</div>
-          <div class="placeholder stack">[学生成果物 03]</div>
+        <h2 class="guide-title">前学期の成果物</h2>
+        <p class="sub">4チームの観光サービス</p>
+        <div class="project-overview" aria-label="前学期の4チームの成果物">
+          <div class="project-item">
+            <div class="project-index">01</div>
+            <div>
+              <h3>大田・江原 観光情報サイト</h3>
+              <p>日本人旅行者の訪問が少ない地域の魅力紹介</p>
+            </div>
+          </div>
+          <div class="project-item">
+            <div class="project-index">02</div>
+            <div>
+              <h3>PICK EAT</h3>
+              <p>喫煙環境を中心に絞り込む飲食店検索アプリ</p>
+            </div>
+          </div>
+          <div class="project-item">
+            <div class="project-index">03</div>
+            <div>
+              <h3>KANSAI Path Pass</h3>
+              <p>日程と訪問先に合わせた関西交通パス比較</p>
+            </div>
+          </div>
+          <div class="project-item">
+            <div class="project-index">04</div>
+            <div>
+              <h3>ソウル駅 乗換案内</h3>
+              <p>駅構内の乗換ルートを整理した案内アプリ</p>
+              <span class="project-status">[画面資料なし]</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="slide" aria-label="7 / 12">
+    <section class="slide" aria-label="7 / 14">
+      <div class="slide-inner">
+        <div class="topline">
+          <div class="course-mark"><span class="dot"></span><span>前学期の成果物</span></div>
+          <div class="page-no">07</div>
+        </div>
+        <h2 class="guide-title">観光情報サイト｜大田・江原</h2>
+        <div class="result-grid">
+          <article class="result-card">
+            <div class="result-visual"><img src="assets/visit-daejeon.jpg" alt="Visit Daejeonのメイン画面" /></div>
+            <div class="result-caption">
+              <div class="result-heading">
+                <h3>Visit Daejeon</h3>
+                <a class="result-link" href="https://pyo0113kr.dothome.co.kr/index.html" target="_blank" rel="noopener noreferrer">サイトを開く ↗</a>
+              </div>
+              <p>テーマ別コース・天気・イベント情報</p>
+            </div>
+          </article>
+          <article class="result-card">
+            <div class="result-visual"><img src="assets/visit-gangwon.jpg" alt="Visit Gangwonのメイン画面" /></div>
+            <div class="result-caption">
+              <div class="result-heading">
+                <h3>Visit Gangwon</h3>
+                <a class="result-link" href="https://tabisapogangwon.dothome.co.kr/" target="_blank" rel="noopener noreferrer">サイトを開く ↗</a>
+              </div>
+              <p>地域ガイド・祭り・観光地情報</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" aria-label="8 / 14">
+      <div class="slide-inner">
+        <div class="topline">
+          <div class="course-mark"><span class="dot"></span><span>前学期の成果物</span></div>
+          <div class="page-no">08</div>
+        </div>
+        <h2 class="guide-title">飲食店検索・交通パス比較</h2>
+        <div class="result-grid">
+          <article class="result-card">
+            <div class="result-visual"><img src="assets/pickeat.jpg" alt="PICK EATの飲食店検索画面" /></div>
+            <div class="result-caption">
+              <div class="result-heading"><h3>PICK EAT</h3></div>
+              <p>喫煙環境のフィルターを中心とした飲食店検索</p>
+            </div>
+          </article>
+          <article class="result-card">
+            <div class="result-visual"><img src="assets/kansai-path-pass.jpg" alt="KANSAI Path Passの比較画面" /></div>
+            <div class="result-caption">
+              <div class="result-heading">
+                <h3>KANSAI Path Pass</h3>
+                <a class="result-link" href="https://qogusals.github.io/2o26cap/index.html" target="_blank" rel="noopener noreferrer">サイトを開く ↗</a>
+              </div>
+              <p>旅行日数・訪問先から関西の交通パスを比較・計算</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" aria-label="9 / 14">
       <div class="slide-inner">
         <div class="topline">
           <div class="course-mark"><span class="dot"></span><span>授業案内</span></div>
-          <div class="page-no">07</div>
+          <div class="page-no">09</div>
         </div>
         <h2 class="guide-title">授業で使うもの</h2>
         <div class="tools">
@@ -704,11 +884,11 @@
       </div>
     </section>
 
-    <section class="slide" aria-label="8 / 12">
+    <section class="slide" aria-label="10 / 14">
       <div class="slide-inner">
         <div class="topline">
           <div class="course-mark"><span class="dot"></span><span>授業案内</span></div>
-          <div class="page-no">08</div>
+          <div class="page-no">10</div>
         </div>
         <h2 class="guide-title">授業の進め方</h2>
         <div class="flow flow-band" aria-label="授業の流れ">
@@ -722,11 +902,11 @@
       </div>
     </section>
 
-    <section class="slide" aria-label="9 / 12">
+    <section class="slide" aria-label="11 / 14">
       <div class="slide-inner">
         <div class="topline">
           <div class="course-mark"><span class="dot"></span><span>授業案内</span></div>
-          <div class="page-no">09</div>
+          <div class="page-no">11</div>
         </div>
         <h2 class="guide-title">評価方法</h2>
         <div class="evaluation">
@@ -739,11 +919,11 @@
       </div>
     </section>
 
-    <section class="slide" aria-label="10 / 12">
+    <section class="slide" aria-label="12 / 14">
       <div class="slide-inner">
         <div class="topline">
           <div class="course-mark"><span class="dot"></span><span>授業案内</span></div>
-          <div class="page-no">10</div>
+          <div class="page-no">12</div>
         </div>
         <h2 class="guide-title">授業の準備</h2>
         <div class="content-panel">
@@ -757,11 +937,11 @@
       </div>
     </section>
 
-    <section class="slide activity" aria-label="11 / 12">
+    <section class="slide activity" aria-label="13 / 14">
       <div class="slide-inner">
         <div class="topline">
           <div class="course-mark"><span class="dot"></span><span>Activity 01</span></div>
-          <div class="page-no">11</div>
+          <div class="page-no">13</div>
         </div>
         <div class="activity-tag">WORD CLOUD</div>
         <div class="prompt">「日本観光」と聞いて、何を思い浮かべますか？</div>
@@ -769,11 +949,11 @@
       </div>
     </section>
 
-    <section class="slide activity" aria-label="12 / 12">
+    <section class="slide activity" aria-label="14 / 14">
       <div class="slide-inner">
         <div class="topline">
           <div class="course-mark"><span class="dot"></span><span>Activity 02</span></div>
-          <div class="page-no">12</div>
+          <div class="page-no">14</div>
         </div>
         <div class="activity-tag">MINI ACTIVITY</div>
         <div class="prompt">日本人旅行者に紹介したい<br />韓国の「何か」を一つ。</div>
@@ -835,7 +1015,7 @@
       });
 
       document.addEventListener("click", (event) => {
-        if (event.target.closest(".controls")) return;
+        if (event.target.closest("a, button")) return;
         const horizontalPosition = event.clientX / window.innerWidth;
         if (horizontalPosition > 0.72) next();
         else if (horizontalPosition < 0.28) previous();
