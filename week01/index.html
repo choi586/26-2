@@ -437,14 +437,6 @@
       line-height: 1.45;
     }
 
-    .project-status {
-      display: inline-block;
-      margin-top: 10px;
-      color: var(--ash);
-      font-size: 15px;
-      font-weight: 700;
-    }
-
     .result-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -507,6 +499,42 @@
       color: var(--muted);
       font-size: clamp(17px, 1.35vw, 21px);
       line-height: 1.42;
+    }
+
+    .result-grid.three-up {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .three-up .result-card {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .three-up .result-visual {
+      height: clamp(230px, 36vh, 360px);
+    }
+
+    .three-up .result-caption {
+      flex: 1;
+      padding: 15px 17px 17px;
+    }
+
+    .three-up .result-heading {
+      display: block;
+    }
+
+    .three-up .result-heading h3 {
+      font-size: clamp(21px, 1.7vw, 27px);
+    }
+
+    .three-up .result-link {
+      display: inline-block;
+      margin-top: 8px;
+    }
+
+    .three-up .result-caption p {
+      font-size: clamp(16px, 1.2vw, 19px);
     }
 
     .evaluation {
@@ -840,7 +868,6 @@
             <div>
               <h3>ソウル駅 乗換案内</h3>
               <p>駅構内の乗換ルートを整理した案内アプリ</p>
-              <span class="project-status">[画面資料なし]</span>
             </div>
           </div>
         </div>
@@ -885,13 +912,16 @@
           <div class="course-mark"><span class="dot"></span><span>前学期の成果物</span></div>
           <div class="page-no">08</div>
         </div>
-        <h2 class="guide-title">飲食店検索・交通パス比較</h2>
-        <div class="result-grid">
+        <h2 class="guide-title">検索・比較・乗換案内</h2>
+        <div class="result-grid three-up">
           <article class="result-card">
             <div class="result-visual"><img src="assets/pickeat.jpg" alt="PICK EATの飲食店検索画面" /></div>
             <div class="result-caption">
-              <div class="result-heading"><h3>PICK EAT</h3></div>
-              <p>喫煙環境のフィルターを中心とした飲食店検索</p>
+              <div class="result-heading">
+                <h3>PICK EAT</h3>
+                <a class="result-link" href="./%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%87%E1%85%A9%E1%86%AB%E1%84%80%E1%85%AA%E1%86%AB%E1%84%80%E1%85%AA%E1%86%BC%E1%84%89%E1%85%A5%E1%84%87%E1%85%B5%E1%84%89%E1%85%B3%E1%84%8F%E1%85%A2%E1%86%B8%E1%84%89%E1%85%B3%E1%84%90%E1%85%A9%E1%86%AB%E1%84%83%E1%85%B5%E1%84%8C%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AB_PICKEAT_app.html" target="_blank" rel="noopener noreferrer">サイトを開く ↗</a>
+              </div>
+              <p>喫煙環境で飲食店を検索</p>
             </div>
           </article>
           <article class="result-card">
@@ -901,7 +931,17 @@
                 <h3>KANSAI Path Pass</h3>
                 <a class="result-link" href="https://qogusals.github.io/2o26cap/index.html" target="_blank" rel="noopener noreferrer">サイトを開く ↗</a>
               </div>
-              <p>旅行日数・訪問先から関西の交通パスを比較・計算</p>
+              <p>日程・訪問先から交通パスを比較</p>
+            </div>
+          </article>
+          <article class="result-card">
+            <div class="result-visual"><img src="assets/seoul-station-transfer.jpg" alt="ソウル駅乗換案内サービスの日本語画面" /></div>
+            <div class="result-caption">
+              <div class="result-heading">
+                <h3>ソウル駅 乗換案内</h3>
+                <a class="result-link" href="https://janghy060322-glitch.github.io/26/seoul_station.html" target="_blank" rel="noopener noreferrer">サイトを開く ↗</a>
+              </div>
+              <p>写真とステップで乗換ルートを案内</p>
             </div>
           </article>
         </div>
