@@ -1,0 +1,1139 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="日本観光サービス キャップストーンデザイン 2026年度後期 2週目 日韓の観光政策とターゲット設定" />
+  <title>日本観光サービス キャップストーンデザイン｜2週目 日韓の観光政策とターゲット設定</title>
+  <style>
+    :root {
+      --red: #e60023;
+      --canvas: #ffffff;
+      --soft: #fbfbf9;
+      --panel: #f4f4f0;
+      --line: #d8d8d1;
+      --ink: #11110f;
+      --body: #343430;
+      --muted: #686861;
+      --ash: #92928b;
+      --matte: #e8e8e3;
+      --deck-scale: 1;
+    }
+
+    * { box-sizing: border-box; }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+      background: var(--matte);
+      color: var(--ink);
+      font-family: "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    button { font: inherit; }
+
+    .deck {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      width: 1280px;
+      height: 720px;
+      overflow: hidden;
+      background: var(--soft);
+      container-type: size;
+      transform: translate(-50%, -50%) scale(var(--deck-scale));
+      transform-origin: center center;
+      will-change: transform;
+    }
+
+    .slide {
+      position: absolute;
+      inset: 0;
+      display: none;
+      width: 100%;
+      height: 100%;
+      padding: 7cqh 7cqw 6cqh;
+      overflow: hidden;
+      background: var(--soft);
+    }
+
+    .slide.active { display: flex; }
+
+    .slide-inner {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: min(1280px, 100%);
+      height: 100%;
+      margin: 0 auto;
+    }
+
+    .topline {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .course-mark {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .dot {
+      flex: none;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--red);
+    }
+
+    .page-no {
+      color: var(--ash);
+      font-variant-numeric: tabular-nums;
+    }
+
+    h1,
+    h2,
+    h3,
+    p { margin: 0; }
+
+    h1,
+    h2,
+    .statement,
+    .prompt { text-wrap: balance; }
+
+    h1 {
+      font-size: clamp(50px, 6.2cqw, 88px);
+      line-height: 1.04;
+      letter-spacing: -0.04em;
+      font-weight: 800;
+    }
+
+    h2 {
+      max-width: 1180px;
+      font-size: clamp(38px, 4.1cqw, 64px);
+      line-height: 1.1;
+      letter-spacing: -0.035em;
+      font-weight: 800;
+    }
+
+    h3 {
+      font-size: clamp(24px, 2.1cqw, 34px);
+      line-height: 1.25;
+      font-weight: 800;
+    }
+
+    .guide-title {
+      font-size: clamp(42px, 4.2cqw, 64px);
+      letter-spacing: -0.03em;
+    }
+
+    .lead {
+      max-width: 1040px;
+      margin-top: 28px;
+      color: var(--body);
+      font-size: clamp(24px, 2.15cqw, 33px);
+      line-height: 1.45;
+    }
+
+    .sub {
+      max-width: 1040px;
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: clamp(21px, 1.7cqw, 26px);
+      line-height: 1.55;
+    }
+
+    .accent { color: var(--red); }
+
+    .center {
+      align-items: center;
+      text-align: center;
+    }
+
+    .cover-title {
+      max-width: 1080px;
+      font-size: clamp(42px, 4.8cqw, 72px);
+      line-height: 1.08;
+    }
+
+    .cover-topic {
+      max-width: 980px;
+      margin-top: 26px;
+      color: #9a3f4d;
+      font-size: clamp(34px, 2.9cqw, 46px);
+      line-height: 1.2;
+      font-weight: 800;
+      text-wrap: balance;
+    }
+
+    .cover-instructor {
+      margin-top: 32px;
+      color: var(--muted);
+      font-size: clamp(20px, 1.6cqw, 25px);
+      font-weight: 700;
+      line-height: 1.5;
+    }
+
+    .statement {
+      max-width: 1120px;
+      font-size: clamp(44px, 5.2cqw, 76px);
+      line-height: 1.12;
+      letter-spacing: -0.04em;
+      font-weight: 800;
+    }
+
+    .question-statement {
+      max-width: 1040px;
+      font-size: clamp(48px, 5.4cqw, 78px);
+    }
+
+    .content-panel {
+      max-width: 1120px;
+      margin-top: 34px;
+      padding: 28px 32px;
+      border: 1px solid #e4e4dd;
+      border-radius: 16px;
+      background: var(--panel);
+    }
+
+    .key-message {
+      max-width: 1120px;
+      margin-top: 34px;
+      padding: 30px 34px;
+      border: 1px solid #e4e4dd;
+      border-radius: 16px;
+      background: var(--panel);
+    }
+
+    .key-message strong {
+      display: block;
+      font-size: clamp(30px, 2.8cqw, 42px);
+      line-height: 1.35;
+    }
+
+    .axis-line {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px 20px;
+      margin-top: 24px;
+      color: var(--body);
+      font-size: clamp(22px, 1.9cqw, 29px);
+      font-weight: 800;
+    }
+
+    .axis-line span:not(:last-child)::after {
+      content: "×";
+      margin-left: 20px;
+      color: var(--red);
+      font-weight: 500;
+    }
+
+    .key-message .sub {
+      margin-top: 22px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+    }
+
+    .columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: stretch;
+      margin-top: 36px;
+    }
+
+    .plain-block {
+      min-height: 190px;
+      padding: 28px 30px;
+      border: 1px solid #e4e4dd;
+      border-radius: 16px;
+      background: var(--panel);
+    }
+
+    .plain-block .label {
+      margin-bottom: 14px;
+      color: var(--red);
+      font-size: 16px;
+      font-weight: 800;
+    }
+
+    .plain-block .big {
+      font-size: clamp(29px, 2.55cqw, 39px);
+      line-height: 1.35;
+      font-weight: 800;
+    }
+
+    .plain-block .small {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: clamp(19px, 1.55cqw, 24px);
+      line-height: 1.5;
+    }
+
+    .source-line {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 24px;
+      max-width: 1120px;
+      margin-top: 18px;
+    }
+
+    .source-name {
+      color: var(--muted);
+      font-size: clamp(20px, 1.65cqw, 25px);
+      line-height: 1.45;
+    }
+
+    .source-link {
+      flex: none;
+      color: var(--red);
+      font-size: 16px;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .source-link:hover,
+    .source-link:focus-visible { text-decoration: underline; }
+
+    .policy-rows,
+    .target-rows,
+    .discussion-rows {
+      max-width: 1120px;
+      margin-top: 30px;
+      padding: 6px 30px;
+      border: 1px solid #e4e4dd;
+      border-radius: 16px;
+      background: var(--panel);
+    }
+
+    .policy-row {
+      display: grid;
+      grid-template-columns: 190px minmax(0, 1fr);
+      gap: 28px;
+      align-items: center;
+      min-height: 100px;
+      padding: 18px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .policy-row:first-child,
+    .target-row:first-child,
+    .discussion-row:first-child { border-top: 0; }
+
+    .policy-row .label {
+      color: var(--red);
+      font-size: 17px;
+      font-weight: 900;
+    }
+
+    .policy-row strong {
+      color: var(--body);
+      font-size: clamp(26px, 2.2cqw, 34px);
+      line-height: 1.35;
+    }
+
+    .target-row {
+      display: grid;
+      grid-template-columns: 64px 1.05fr 0.8fr 1.5fr;
+      gap: 20px;
+      align-items: center;
+      min-height: 90px;
+      padding: 16px 0;
+      border-top: 1px solid var(--line);
+      color: var(--body);
+      font-size: clamp(20px, 1.7cqw, 26px);
+      line-height: 1.35;
+    }
+
+    .target-index {
+      color: var(--red);
+      font-size: 16px;
+      font-weight: 900;
+    }
+
+    .target-row strong { color: var(--ink); }
+
+    .flow {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: clamp(26px, 2.5cqw, 38px);
+      font-weight: 800;
+    }
+
+    .flow .arrow {
+      color: var(--ash);
+      font-weight: 400;
+    }
+
+    .reading-flow {
+      width: max-content;
+      max-width: 100%;
+      margin-top: 38px;
+      padding: 28px 32px;
+      border: 1px solid #e4e4dd;
+      border-radius: 16px;
+      background: var(--panel);
+      font-size: clamp(32px, 3.15cqw, 48px);
+    }
+
+    .policy-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      max-width: 1120px;
+      margin-top: 30px;
+      overflow: hidden;
+      border: 1px solid #e4e4dd;
+      border-radius: 16px;
+      background: var(--panel);
+    }
+
+    .policy-column {
+      min-width: 0;
+      padding: 26px 30px 28px;
+    }
+
+    .policy-column + .policy-column { border-left: 1px solid var(--line); }
+
+    .policy-column h3 {
+      margin-bottom: 18px;
+      color: var(--red);
+      font-size: 20px;
+    }
+
+    .compact-list {
+      display: grid;
+      gap: 13px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .compact-list li {
+      color: var(--body);
+      font-size: clamp(20px, 1.65cqw, 25px);
+      line-height: 1.4;
+    }
+
+    .compact-list li::before {
+      content: "";
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      margin: 0 13px 3px 0;
+      border-radius: 50%;
+      background: var(--red);
+    }
+
+    .question-context {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px 16px;
+      margin-top: 38px;
+      color: var(--muted);
+      font-size: clamp(18px, 1.5cqw, 23px);
+      font-weight: 700;
+    }
+
+    .question-context span:not(:last-child)::after {
+      content: "·";
+      margin-left: 16px;
+      color: var(--red);
+    }
+
+    .comparison-note {
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: clamp(19px, 1.55cqw, 24px);
+      line-height: 1.45;
+    }
+
+    .discussion-row {
+      display: grid;
+      grid-template-columns: 56px minmax(0, 1fr);
+      gap: 18px;
+      align-items: center;
+      min-height: 112px;
+      padding: 20px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .discussion-index {
+      color: var(--red);
+      font-size: 16px;
+      font-weight: 900;
+    }
+
+    .discussion-row strong {
+      font-size: clamp(27px, 2.35cqw, 36px);
+      line-height: 1.35;
+    }
+
+    .teacher-note {
+      max-width: 1120px;
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: clamp(18px, 1.5cqw, 23px);
+      line-height: 1.5;
+    }
+
+    .persona-compare {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      max-width: 1120px;
+      margin-top: 32px;
+    }
+
+    .persona {
+      padding: 28px 30px;
+      border: 1px solid #e4e4dd;
+      border-radius: 16px;
+      background: var(--panel);
+    }
+
+    .persona .label {
+      color: var(--red);
+      font-size: 16px;
+      font-weight: 900;
+    }
+
+    .persona h3 {
+      margin-top: 13px;
+      font-size: clamp(29px, 2.5cqw, 38px);
+    }
+
+    .persona p {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: clamp(20px, 1.6cqw, 25px);
+      line-height: 1.5;
+    }
+
+    .persona-question {
+      margin-top: 28px;
+      font-size: clamp(27px, 2.25cqw, 35px);
+      font-weight: 800;
+    }
+
+    .activity { background: var(--canvas); }
+
+    .activity-tag {
+      width: max-content;
+      margin-bottom: 20px;
+      color: var(--red);
+      font-size: 15px;
+      font-weight: 900;
+      letter-spacing: 0.05em;
+    }
+
+    .prompt {
+      max-width: 1120px;
+      font-size: clamp(42px, 5cqw, 74px);
+      line-height: 1.12;
+      letter-spacing: -0.04em;
+      font-weight: 800;
+    }
+
+    .activity-title {
+      font-size: clamp(40px, 3.7cqw, 56px);
+    }
+
+    .profile-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 28px;
+      max-width: 1120px;
+      margin-top: 24px;
+      padding: 4px 28px;
+      border: 1px solid #e4e4dd;
+      border-radius: 16px;
+      background: var(--panel);
+    }
+
+    .profile-item {
+      display: grid;
+      grid-template-columns: 42px minmax(0, 1fr);
+      gap: 13px;
+      align-items: center;
+      min-height: 80px;
+      padding: 14px 0;
+      border-top: 1px solid var(--line);
+      color: var(--body);
+      font-size: clamp(18px, 1.45cqw, 22px);
+      line-height: 1.4;
+    }
+
+    .profile-item:nth-child(-n + 2) { border-top: 0; }
+
+    .profile-key {
+      color: var(--red);
+      font-size: 16px;
+      font-weight: 900;
+    }
+
+    .activity-question {
+      margin-top: 24px;
+      color: var(--body);
+      font-size: clamp(23px, 1.9cqw, 29px);
+      line-height: 1.5;
+      font-weight: 800;
+    }
+
+    .activity-note {
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: clamp(18px, 1.45cqw, 22px);
+      line-height: 1.5;
+    }
+
+    .change-panel {
+      max-width: 1120px;
+      margin-top: 30px;
+      padding: 8px 30px;
+      border: 1px solid #e4e4dd;
+      border-radius: 16px;
+      background: var(--panel);
+    }
+
+    .change-row {
+      display: grid;
+      grid-template-columns: 1fr 70px 1fr;
+      align-items: center;
+      min-height: 68px;
+      border-top: 1px solid var(--line);
+      color: var(--body);
+      font-size: clamp(20px, 1.65cqw, 25px);
+      font-weight: 800;
+    }
+
+    .change-row:first-child { border-top: 0; }
+    .change-row .arrow { color: var(--red); text-align: center; }
+
+    .data-mission {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 0;
+      max-width: 1120px;
+      margin-top: 30px;
+      overflow: hidden;
+      border: 1px solid #e4e4dd;
+      border-radius: 16px;
+      background: var(--panel);
+    }
+
+    .mission-main {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 250px;
+      padding: 28px 32px;
+      border-right: 1px solid var(--line);
+    }
+
+    .mission-main .label {
+      color: var(--red);
+      font-size: 16px;
+      font-weight: 900;
+    }
+
+    .mission-main strong {
+      margin-top: 14px;
+      font-size: clamp(29px, 2.5cqw, 38px);
+      line-height: 1.35;
+    }
+
+    .mission-checks {
+      display: grid;
+      align-content: center;
+      padding: 20px 30px;
+    }
+
+    .mission-check {
+      padding: 16px 0;
+      border-top: 1px solid var(--line);
+      color: var(--body);
+      font-size: clamp(20px, 1.65cqw, 25px);
+      line-height: 1.4;
+      font-weight: 800;
+    }
+
+    .mission-check:first-child { border-top: 0; }
+
+    .summary-flow {
+      width: max-content;
+      max-width: 100%;
+      margin-top: 38px;
+      padding: 24px 28px;
+      border: 1px solid #e4e4dd;
+      border-radius: 16px;
+      background: var(--panel);
+      font-size: clamp(26px, 2.35cqw, 36px);
+    }
+
+    .summary-line {
+      max-width: 1080px;
+      margin-top: 30px;
+      color: var(--body);
+      font-size: clamp(30px, 2.75cqw, 42px);
+      line-height: 1.4;
+      font-weight: 800;
+    }
+
+    .controls {
+      position: fixed;
+      right: 18px;
+      bottom: 16px;
+      z-index: 20;
+      display: flex;
+      gap: 8px;
+      opacity: 0.12;
+      transition: opacity 150ms ease;
+    }
+
+    .controls:hover,
+    .controls:focus-within { opacity: 1; }
+
+    .controls button {
+      width: 42px;
+      height: 42px;
+      padding: 0;
+      border: 0;
+      border-radius: 50%;
+      background: var(--panel);
+      color: var(--ink);
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .controls { transition: none; }
+    }
+
+    @media (hover: none), (pointer: coarse) {
+      .controls { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="deck" aria-live="polite">
+    <section class="slide active" aria-label="1 / 17">
+      <div class="slide-inner center">
+        <div class="topline">
+          <div class="course-mark"><span class="dot"></span><span>聖公会大学 ｜ 2026年度 後期 ｜ 2週目</span></div>
+          <div class="page-no">01</div>
+        </div>
+        <h1 class="cover-title">日本観光サービス<br />キャップストーンデザイン</h1>
+        <p class="cover-topic">日韓の観光政策とターゲット設定</p>
+        <p class="cover-instructor">担当 崔ナリ</p>
+      </div>
+    </section>
+
+    <section class="slide" aria-label="2 / 17">
+      <div class="slide-inner center">
+        <div class="topline">
+          <div class="course-mark"><span class="dot"></span><span>今日のテーマ</span></div>
+          <div class="page-no">02</div>
+        </div>
+        <div class="statement question-statement">「日本人観光客」とは、<br />誰なのか。</div>
+      </div>
+    </section>
+
+    <section class="slide" aria-label="3 / 17">
+      <div class="slide-inner">
+        <div class="topline">
+          <div class="course-mark"><span class="dot"></span><span>今日のテーマ</span></div>
+          <div class="page-no">03</div>
+        </div>
+        <h2 class="guide-title">ターゲット設定</h2>
+        <div class="key-message">
+          <strong>同じ「日本人観光客」でも、求める観光体験は異なる</strong>
+          <div class="axis-line" aria-label="ターゲットを見る軸">
+            <span>年齢・性別</span><span>同行者</span><span>韓国への訪問経験</span>
+          </div>
+          <p class="sub">「日本人観光客」から、もう一段階具体的に</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" aria-label="4 / 17">
+      <div class="slide-inner">
+        <div class="topline">
+          <div class="course-mark"><span class="dot"></span><span>政策比較</span></div>
+          <div class="page-no">04</div>
+        </div>
+        <h2 class="guide-title">互いの観光客をどう見ているか</h2>
+        <div class="columns">
+          <div class="plain-block">
+            <div class="label">日本の政策</div>
+            <div class="big">韓国人観光客を<br />どう見ているか</div>
+          </div>
+          <div class="plain-block">
+            <div class="label">韓国の政策</div>
+            <div class="big">日本人観光客を<br />どう見ているか</div>
+          </div>
+        </div>
+        <p class="sub">両国の観光機関が示す実際の政策資料を比較</p>
+      </div>
+    </section>
+
+    <section class="slide" aria-label="5 / 17">
+      <div class="slide-inner">
+        <div class="topline">
+          <div class="course-mark"><span class="dot"></span><span>日本側 ｜ 韓国市場</span></div>
+          <div class="page-no">05</div>
+        </div>
+        <h2 class="guide-title">韓国市場の見方</h2>
+        <div class="source-line">
+          <p class="source-name">JNTO「韓国市場マーケティング戦略」</p>
+          <a class="source-link" href="https://www.jnto.go.jp/projects/overseas-promotion/marketing-strategy/korea.html" target="_blank" rel="noopener noreferrer">資料を開く ↗</a>
+        </div>
+        <div class="policy-rows">
+          <div class="policy-row"><span class="label">ターゲット</span><strong>訪日経験 × 年代 × 同行者</strong></div>
+          <div class="policy-row"><span class="label">何を</span><strong>関心のあるコンテンツ</strong></div>
+          <div class="policy-row"><span class="label">どう伝えるか</span><strong>情報発信の方法</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" aria-label="6 / 17">
+      <div class="slide-inner">
+        <div class="topline">
+          <div class="course-mark"><span class="dot"></span><span>日本側 ｜ 韓国市場</span></div>
+          <div class="page-no">06</div>
+        </div>
+        <h2 class="guide-title">JNTOのターゲット区分</h2>
+        <div class="source-line">
+          <p class="source-name">訪日経験・年代・同行者による分類</p>
+          <a class="source-link" href="https://www.jnto.go.jp/projects/overseas-promotion/marketing-strategy/strategy_korea_202604.pdf" target="_blank" rel="noopener noreferrer">原文を見る ↗</a>
+        </div>
+        <div class="target-rows">
+          <div class="target-row"><span class="target-index">A</span><strong>訪日経験2回以上</strong><span>50代以上</span><span>夫婦・パートナー、家族・親族</span></div>
+          <div class="target-row"><span class="target-index">B</span><strong>訪日経験2回以上</strong><span>30〜40代</span><span>夫婦・パートナー、家族・親族</span></div>
+          <div class="target-row"><span class="target-index">C</span><strong>訪日経験2回以上</strong><span>20〜30代</span><span>友人、一人旅行</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" aria-label="7 / 17">
+      <div class="slide-inner">
+        <div class="topline">
+          <div class="course-mark"><span class="dot"></span><span>日本側 ｜ 韓国市場</span></div>
+          <div class="page-no">07</div>
+        </div>
+        <h2 class="guide-title">政策を読む視点</h2>
+        <div class="flow reading-flow" aria-label="政策を読む視点">
+          <span>誰に</span><span class="arrow">→</span>
+          <span>何を</span><span class="arrow">→</span>
+          <span>どうやって伝えるか</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" aria-label="8 / 17">
+      <div class="slide-inner">
+        <div class="topline">
+          <div class="course-mark"><span class="dot"></span><span>韓国側 ｜ 日本市場</span></div>
+          <div class="page-no">08</div>
+        </div>
+        <h2 class="guide-title">日本市場への取り組み</h2>
+        <div class="source-line">
+          <p class="source-name">韓国観光公社「2026年事業計画」日本チーム</p>
+          <a class="source-link" href="https://touraz.kr/biznews/550050" target="_blank" rel="noopener noreferrer">資料を開く ↗</a>
+        </div>
+        <div class="policy-columns">
+          <div class="policy-column">
+            <h3>地方旅行</h3>
+            <ul class="compact-list">
+              <li>ソウル集中から地方へ</li>
+              <li>地方の小都市30選</li>
+              <li>地方空港を拠点とする都市</li>
+              <li>地方オプショナルツアー</li>
+            </ul>
+          </div>
+          <div class="policy-column">
+            <h3>コンテンツ・発信</h3>
+            <ul class="compact-list">
+              <li>「韓国人の日常を旅する」</li>
+              <li>美食・絶景などの地域特化コンテンツ</li>
+              <li>地域コンテンツの商品化</li>
+              <li>OTT・SNS・インフルエンサー</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" aria-label="9 / 17">
+      <div class="slide-inner center">
+        <div class="topline">
+          <div class="course-mark"><span class="dot"></span><span>韓国側 ｜ 日本市場</span></div>
+          <div class="page-no">09</div>
+        </div>
+        <div class="statement question-statement">この地方旅行は、<br />どんな日本人観光客のためのものでしょうか。</div>
+        <div class="question-context" aria-label="政策の要素">
+          <span>地方都市</span><span>地域コンテンツ</span><span>商品化</span><span>情報発信</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" aria-label="10 / 17">
+      <div class="slide-inner">
+        <div class="topline">
+          <div class="course-mark"><span class="dot"></span><span>政策比較</span></div>
+          <div class="page-no">10</div>
+        </div>
+        <h2 class="guide-title">二つの政策を比較</h2>
+        <div class="policy-columns">
+          <div class="policy-column">
+            <h3>日本側 ｜ 韓国人市場</h3>
+            <ul class="compact-list">
+              <li>訪日経験</li>
+              <li>年齢</li>
+              <li>同行者</li>
+              <li>ターゲット別コンテンツ</li>
+              <li>情報発信</li>
+            </ul>
+          </div>
+          <div class="policy-column">
+            <h3>韓国側 ｜ 日本人市場</h3>
+            <ul class="compact-list">
+              <li>日本市場</li>
+              <li>地方旅行・地方都市</li>
+              <li>地域コンテンツ</li>
+              <li>商品化</li>
+              <li>SNS・OTA・メディア</li>
+            </ul>
+          </div>
+        </div>
+        <p class="comparison-note">何が違いますか。</p>
+      </div>
+    </section>
+
+    <section class="slide" aria-label="11 / 17">
+      <div class="slide-inner">
+        <div class="topline">
+          <div class="course-mark"><span class="dot"></span><span>政策比較</span></div>
+          <div class="page-no">11</div>
+        </div>
+        <h2 class="guide-title">比較して考える</h2>
+        <div class="discussion-rows">
+          <div class="discussion-row"><span class="discussion-index">01</span><strong>なぜ、政策の方向が違うのでしょうか。</strong></div>
+          <div class="discussion-row"><span class="discussion-index">02</span><strong>ターゲットは、どこまで具体的ですか。</strong></div>
+        </div>
+        <p class="teacher-note">優劣ではなく、政策が観光客をどの単位で見ているかを確認</p>
+      </div>
+    </section>
+
+    <section class="slide" aria-label="12 / 17">
+      <div class="slide-inner">
+        <div class="topline">
+          <div class="course-mark"><span class="dot"></span><span>ターゲット設定</span></div>
+          <div class="page-no">12</div>
+        </div>
+        <h2 class="guide-title">「日本人観光客」は、一つのターゲット？</h2>
+        <div class="persona-compare">
+          <div class="persona">
+            <div class="label">A</div>
+            <h3>20代・女性</h3>
+            <p>友人と旅行<br />初めての韓国</p>
+          </div>
+          <div class="persona">
+            <div class="label">B</div>
+            <h3>50代・女性</h3>
+            <p>友人と旅行<br />5回目以上の韓国</p>
+          </div>
+        </div>
+        <p class="persona-question">二人に、同じ場所・同じ体験をすすめますか。</p>
+      </div>
+    </section>
+
+    <section class="slide activity" aria-label="13 / 17">
+      <div class="slide-inner">
+        <div class="topline">
+          <div class="course-mark"><span class="dot"></span><span>Activity 01</span></div>
+          <div class="page-no">13</div>
+        </div>
+        <div class="activity-tag">TEAM DISCUSSION</div>
+        <h2 class="activity-title">この人に、どこをすすめる？</h2>
+        <div class="profile-grid" aria-label="四つのターゲット条件">
+          <div class="profile-item"><span class="profile-key">A</span><span>20代・女性・友人と旅行・初めての韓国</span></div>
+          <div class="profile-item"><span class="profile-key">B</span><span>20代・男性・一人旅・3回目の韓国</span></div>
+          <div class="profile-item"><span class="profile-key">C</span><span>30代・女性・夫婦旅行・2回目の韓国</span></div>
+          <div class="profile-item"><span class="profile-key">D</span><span>50代・女性・友人と旅行・5回目以上の韓国</span></div>
+        </div>
+        <p class="activity-question">韓国のどこをすすめますか。なぜ、その場所ですか。</p>
+        <p class="activity-note">チームで相談 → 短く発表</p>
+      </div>
+    </section>
+
+    <section class="slide activity" aria-label="14 / 17">
+      <div class="slide-inner">
+        <div class="topline">
+          <div class="course-mark"><span class="dot"></span><span>Activity 02</span></div>
+          <div class="page-no">14</div>
+        </div>
+        <div class="activity-tag">CHANGE ONE CONDITION</div>
+        <h2 class="activity-title">条件を一つ変えたら？</h2>
+        <div class="change-panel" aria-label="条件変更の例">
+          <div class="change-row"><span>初めて</span><span class="arrow">→</span><span>5回目</span></div>
+          <div class="change-row"><span>一人旅</span><span class="arrow">→</span><span>両親と一緒</span></div>
+          <div class="change-row"><span>30代</span><span class="arrow">→</span><span>60代</span></div>
+          <div class="change-row"><span>友人と旅行</span><span class="arrow">→</span><span>一人旅</span></div>
+        </div>
+        <p class="activity-question">同じ場所をすすめますか。なぜ変わりましたか。</p>
+      </div>
+    </section>
+
+    <section class="slide activity" aria-label="15 / 17">
+      <div class="slide-inner">
+        <div class="topline">
+          <div class="course-mark"><span class="dot"></span><span>Activity 03</span></div>
+          <div class="page-no">15</div>
+        </div>
+        <div class="activity-tag">KOREA TOURISM DATA LAB</div>
+        <h2 class="activity-title">データで確認する</h2>
+        <div class="source-line">
+          <p class="source-name">韓国観光データラボ</p>
+          <a class="source-link" href="https://datalab.visitkorea.or.kr/datalab/portal/nat/getNatFocTourAna.do" target="_blank" rel="noopener noreferrer">データを見る ↗</a>
+        </div>
+        <div class="data-mission">
+          <div class="mission-main">
+            <span class="label">MISSION</span>
+            <strong>日本人観光客について、興味深いデータを一つ探す</strong>
+          </div>
+          <div class="mission-checks">
+            <div class="mission-check">どんなデータですか。</div>
+            <div class="mission-check">なぜ興味深いですか。</div>
+            <div class="mission-check">予想と同じですか、違いますか。</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" aria-label="16 / 17">
+      <div class="slide-inner">
+        <div class="topline">
+          <div class="course-mark"><span class="dot"></span><span>まとめ</span></div>
+          <div class="page-no">16</div>
+        </div>
+        <h2 class="guide-title">ターゲットを具体的にする</h2>
+        <div class="flow summary-flow" aria-label="ターゲットを具体化する順序">
+          <span>日本人</span><span class="arrow">→</span>
+          <span>年齢・性別</span><span class="arrow">→</span>
+          <span>同行者</span><span class="arrow">→</span>
+          <span>韓国への訪問経験</span>
+        </div>
+        <p class="summary-line">誰にすすめるかが変われば、何をすすめるかも変わる。</p>
+      </div>
+    </section>
+
+    <section class="slide activity" aria-label="17 / 17">
+      <div class="slide-inner center">
+        <div class="topline">
+          <div class="course-mark"><span class="dot"></span><span>Capstone</span></div>
+          <div class="page-no">17</div>
+        </div>
+        <div class="statement question-statement">あなたたちの観光サービスは、<br />どんな日本人のためのサービスですか。</div>
+      </div>
+    </section>
+  </main>
+
+  <div class="controls" aria-label="スライド操作">
+    <button id="prev" type="button" aria-label="前のスライド">←</button>
+    <button id="next" type="button" aria-label="次のスライド">→</button>
+  </div>
+
+  <script>
+    (() => {
+      const deck = document.querySelector(".deck");
+      const slides = [...document.querySelectorAll(".slide")];
+      const deckWidth = 1280;
+      const deckHeight = 720;
+      let index = 0;
+
+      function fitDeck() {
+        const scale = Math.min(window.innerWidth / deckWidth, window.innerHeight / deckHeight);
+        deck.style.setProperty("--deck-scale", String(scale));
+      }
+
+      function show(target) {
+        index = Math.max(0, Math.min(target, slides.length - 1));
+        slides.forEach((slide, slideIndex) => {
+          const isActive = slideIndex === index;
+          slide.classList.toggle("active", isActive);
+          slide.setAttribute("aria-hidden", String(!isActive));
+        });
+        history.replaceState(null, "", `#${index + 1}`);
+      }
+
+      function next() { show(index + 1); }
+      function previous() { show(index - 1); }
+
+      document.getElementById("next").addEventListener("click", next);
+      document.getElementById("prev").addEventListener("click", previous);
+      window.addEventListener("resize", fitDeck, { passive: true });
+      document.addEventListener("fullscreenchange", fitDeck);
+
+      document.addEventListener("keydown", (event) => {
+        if (["ArrowRight", "PageDown", " "].includes(event.key)) {
+          event.preventDefault();
+          next();
+        }
+        if (["ArrowLeft", "PageUp"].includes(event.key)) {
+          event.preventDefault();
+          previous();
+        }
+        if (event.key === "Home") {
+          event.preventDefault();
+          show(0);
+        }
+        if (event.key === "End") {
+          event.preventDefault();
+          show(slides.length - 1);
+        }
+        if (event.key.toLowerCase() === "f") {
+          if (!document.fullscreenElement) document.documentElement.requestFullscreen?.();
+          else document.exitFullscreen?.();
+        }
+      });
+
+      document.addEventListener("click", (event) => {
+        if (event.target.closest("a, button")) return;
+        const deckRect = deck.getBoundingClientRect();
+        const insideDeck = event.clientX >= deckRect.left
+          && event.clientX <= deckRect.right
+          && event.clientY >= deckRect.top
+          && event.clientY <= deckRect.bottom;
+        if (!insideDeck) return;
+        const horizontalPosition = (event.clientX - deckRect.left) / deckRect.width;
+        if (horizontalPosition > 0.72) next();
+        else if (horizontalPosition < 0.28) previous();
+      });
+
+      const hash = Number.parseInt(location.hash.slice(1), 10);
+      if (Number.isFinite(hash)) index = Math.max(0, Math.min(hash - 1, slides.length - 1));
+      fitDeck();
+      show(index);
+    })();
+  </script>
+</body>
+</html>
