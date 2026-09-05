@@ -200,6 +200,24 @@
       font-size: clamp(48px, 5.4cqw, 78px);
     }
 
+    .question-panel {
+      max-width: 1120px;
+      margin-top: 34px;
+      padding: 32px 36px;
+      border: 1px solid #e4e4dd;
+      border-radius: 16px;
+      background: var(--panel);
+    }
+
+    .question-panel .question-text {
+      color: var(--body);
+      font-size: clamp(36px, 3.45cqw, 46px);
+      font-weight: 700;
+      line-height: 1.35;
+      letter-spacing: -0.025em;
+      text-wrap: balance;
+    }
+
     .content-panel {
       max-width: 1120px;
       margin-top: 34px;
@@ -452,6 +470,8 @@
       font-size: clamp(18px, 1.5cqw, 23px);
       font-weight: 700;
     }
+
+    .question-context.align-left { justify-content: flex-start; }
 
     .question-context span:not(:last-child)::after {
       content: "·";
@@ -883,13 +903,16 @@
     </section>
 
     <section class="slide" aria-label="9 / 17">
-      <div class="slide-inner center">
+      <div class="slide-inner">
         <div class="topline">
           <div class="course-mark"><span class="dot"></span><span>韓国側 ｜ 日本市場</span></div>
           <div class="page-no">09</div>
         </div>
-        <div class="statement question-statement">この地方旅行は、<br />どんな日本人観光客のためのものでしょうか。</div>
-        <div class="question-context" aria-label="政策の要素">
+        <h2 class="guide-title">地方旅行のターゲット</h2>
+        <div class="question-panel">
+          <p class="question-text">この地方旅行は、<br />どんな日本人観光客のためのものでしょうか。</p>
+        </div>
+        <div class="question-context align-left" aria-label="政策の要素">
           <span>地方都市</span><span>地域コンテンツ</span><span>商品化</span><span>情報発信</span>
         </div>
       </div>
@@ -1047,12 +1070,15 @@
     </section>
 
     <section class="slide activity" aria-label="17 / 17">
-      <div class="slide-inner center">
+      <div class="slide-inner">
         <div class="topline">
           <div class="course-mark"><span class="dot"></span><span>Capstone</span></div>
           <div class="page-no">17</div>
         </div>
-        <div class="statement question-statement">あなたたちの観光サービスは、<br />どんな日本人のためのサービスですか。</div>
+        <h2 class="guide-title">プロジェクトのターゲット</h2>
+        <div class="question-panel">
+          <p class="question-text">あなたたちの観光サービスは、<br />どんな日本人のためのサービスですか。</p>
+        </div>
       </div>
     </section>
   </main>
