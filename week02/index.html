@@ -140,6 +140,11 @@
       letter-spacing: -0.03em;
     }
 
+    .question-guide-title {
+      font-size: clamp(38px, 3.6cqw, 54px);
+      line-height: 1.18;
+    }
+
     .lead {
       max-width: 1040px;
       margin-top: 28px;
@@ -265,6 +270,43 @@
       padding-top: 20px;
       border-top: 1px solid var(--line);
     }
+
+    .visit-contrast {
+      display: grid;
+      justify-items: center;
+      gap: 12px;
+      width: min(760px, 100%);
+      margin-top: 36px;
+      padding: 28px 34px;
+      border: 1px solid #e4e4dd;
+      border-radius: 16px;
+      background: var(--panel);
+    }
+
+    .visit-state {
+      color: var(--body);
+      font-size: clamp(29px, 2.55cqw, 39px);
+      font-weight: 800;
+      line-height: 1.35;
+    }
+
+    .visit-swap {
+      color: var(--red);
+      font-size: 30px;
+      font-weight: 500;
+      line-height: 1;
+    }
+
+    .instruction-line {
+      max-width: 1120px;
+      margin-top: 18px;
+      color: var(--body);
+      font-size: clamp(22px, 1.8cqw, 28px);
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
+    .policy-rows.compact-top { margin-top: 22px; }
 
     .columns {
       display: grid;
@@ -411,6 +453,53 @@
       font-size: clamp(32px, 3.15cqw, 48px);
     }
 
+    .target-change-flow {
+      max-width: 1120px;
+      margin-top: 26px;
+      padding: 18px 30px;
+      border: 1px solid #e4e4dd;
+      border-radius: 16px;
+      background: var(--panel);
+    }
+
+    .target-change-row {
+      display: grid;
+      grid-template-columns: 170px minmax(0, 1fr);
+      gap: 24px;
+      align-items: center;
+      min-height: 56px;
+    }
+
+    .target-change-label {
+      color: var(--red);
+      font-size: clamp(21px, 1.75cqw, 27px);
+      font-weight: 900;
+    }
+
+    .target-change-copy {
+      color: var(--body);
+      font-size: clamp(20px, 1.65cqw, 25px);
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    .target-change-arrow {
+      height: 24px;
+      color: var(--ash);
+      font-size: 24px;
+      line-height: 1;
+      text-align: center;
+    }
+
+    .target-change-summary {
+      max-width: 1120px;
+      margin-top: 22px;
+      color: var(--body);
+      font-size: clamp(24px, 2cqw, 31px);
+      font-weight: 800;
+      line-height: 1.4;
+    }
+
     .policy-columns {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -485,6 +574,23 @@
       font-size: clamp(19px, 1.55cqw, 24px);
       line-height: 1.45;
     }
+
+    .comparison-summary { margin-top: 32px; }
+
+    .comparison-summary .plain-block {
+      min-height: 220px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .comparison-summary .small {
+      margin-top: 0;
+      color: var(--body);
+      font-size: clamp(21px, 1.7cqw, 26px);
+    }
+
+    .comparison-summary .big { margin-top: 16px; }
 
     .discussion-row {
       display: grid;
@@ -718,6 +824,28 @@
       font-weight: 800;
     }
 
+    .summary-axis {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px 20px;
+      width: max-content;
+      max-width: 100%;
+      margin-top: 34px;
+      padding: 24px 28px;
+      border: 1px solid #e4e4dd;
+      border-radius: 16px;
+      background: var(--panel);
+      color: var(--body);
+      font-size: clamp(27px, 2.35cqw, 36px);
+      font-weight: 800;
+    }
+
+    .summary-axis .times {
+      color: var(--red);
+      font-weight: 500;
+    }
+
     .controls {
       position: fixed;
       right: 18px;
@@ -755,7 +883,7 @@
 </head>
 <body>
   <main class="deck" aria-live="polite">
-    <section class="slide active" aria-label="1 / 17">
+    <section class="slide active" aria-label="1 / 16">
       <div class="slide-inner center">
         <div class="topline">
           <div class="course-mark"><span class="dot"></span><span>聖公会大学 ｜ 2026年度 後期 ｜ 2週目</span></div>
@@ -767,7 +895,7 @@
       </div>
     </section>
 
-    <section class="slide" aria-label="2 / 17">
+    <section class="slide" aria-label="2 / 16">
       <div class="slide-inner center">
         <div class="topline">
           <div class="course-mark"><span class="dot"></span><span>今日のテーマ</span></div>
@@ -777,24 +905,22 @@
       </div>
     </section>
 
-    <section class="slide" aria-label="3 / 17">
+    <section class="slide" aria-label="3 / 16">
       <div class="slide-inner">
         <div class="topline">
           <div class="course-mark"><span class="dot"></span><span>今日のテーマ</span></div>
           <div class="page-no">03</div>
         </div>
-        <h2 class="guide-title">ターゲット設定</h2>
-        <div class="key-message">
-          <strong>同じ「日本人観光客」でも、求める観光体験は異なる</strong>
-          <div class="axis-line" aria-label="ターゲットを見る軸">
-            <span>年齢・性別</span><span>同行者</span><span>韓国への訪問経験</span>
-          </div>
-          <p class="sub">「日本人観光客」から、もう一段階具体的に</p>
+        <h2 class="guide-title">同じ「日本人観光客」でも、同じ旅行をする？</h2>
+        <div class="visit-contrast" aria-label="初回と5回目の韓国旅行の比較">
+          <div class="visit-state">初めての韓国旅行</div>
+          <div class="visit-swap" aria-hidden="true">↕</div>
+          <div class="visit-state">5回目の韓国旅行</div>
         </div>
       </div>
     </section>
 
-    <section class="slide" aria-label="4 / 17">
+    <section class="slide" aria-label="4 / 16">
       <div class="slide-inner">
         <div class="topline">
           <div class="course-mark"><span class="dot"></span><span>政策比較</span></div>
@@ -815,18 +941,19 @@
       </div>
     </section>
 
-    <section class="slide" aria-label="5 / 17">
+    <section class="slide" aria-label="5 / 16">
       <div class="slide-inner">
         <div class="topline">
           <div class="course-mark"><span class="dot"></span><span>日本側 ｜ 韓国市場</span></div>
           <div class="page-no">05</div>
         </div>
-        <h2 class="guide-title">韓国市場の見方</h2>
+        <h2 class="guide-title question-guide-title">JNTOは「韓国人観光客」を、<br />どのように見ている？</h2>
+        <p class="instruction-line">何を基準に分けているか、探してみよう。</p>
         <div class="source-line">
           <p class="source-name">JNTO「韓国市場マーケティング戦略」</p>
           <a class="source-link" href="https://www.jnto.go.jp/projects/overseas-promotion/marketing-strategy/korea.html" target="_blank" rel="noopener noreferrer">資料を開く ↗</a>
         </div>
-        <div class="policy-rows">
+        <div class="policy-rows compact-top">
           <div class="policy-row"><span class="label">ターゲット</span><strong>訪日経験 × 年代 × 同行者</strong></div>
           <div class="policy-row"><span class="label">何を</span><strong>関心のあるコンテンツ</strong></div>
           <div class="policy-row"><span class="label">どう伝えるか</span><strong>情報発信の方法</strong></div>
@@ -834,7 +961,7 @@
       </div>
     </section>
 
-    <section class="slide" aria-label="6 / 17">
+    <section class="slide" aria-label="6 / 16">
       <div class="slide-inner">
         <div class="topline">
           <div class="course-mark"><span class="dot"></span><span>日本側 ｜ 韓国市場</span></div>
@@ -853,22 +980,34 @@
       </div>
     </section>
 
-    <section class="slide" aria-label="7 / 17">
+    <section class="slide" aria-label="7 / 16">
       <div class="slide-inner">
         <div class="topline">
           <div class="course-mark"><span class="dot"></span><span>日本側 ｜ 韓国市場</span></div>
           <div class="page-no">07</div>
         </div>
-        <h2 class="guide-title">政策を読む視点</h2>
-        <div class="flow reading-flow" aria-label="政策を読む視点">
-          <span>誰に</span><span class="arrow">→</span>
-          <span>何を</span><span class="arrow">→</span>
-          <span>どうやって伝えるか</span>
+        <h2 class="guide-title">ターゲットを決めたあと、何が変わる？</h2>
+        <div class="target-change-flow" aria-label="ターゲットによって提案と伝え方が変わる流れ">
+          <div class="target-change-row">
+            <div class="target-change-label">誰に</div>
+            <p class="target-change-copy">20〜30代・友人／一人旅・訪日経験2回以上</p>
+          </div>
+          <div class="target-change-arrow" aria-hidden="true">↓</div>
+          <div class="target-change-row">
+            <div class="target-change-label">何を</div>
+            <p class="target-change-copy">グルメ・カフェ・アニメ・市場・温泉・鉄道など</p>
+          </div>
+          <div class="target-change-arrow" aria-hidden="true">↓</div>
+          <div class="target-change-row">
+            <div class="target-change-label">どう伝える？</div>
+            <p class="target-change-copy">動画・SNS・インフルエンサー</p>
+          </div>
         </div>
+        <p class="target-change-summary">ターゲットによって、すすめるもの・伝え方も変わる。</p>
       </div>
     </section>
 
-    <section class="slide" aria-label="8 / 17">
+    <section class="slide" aria-label="8 / 16">
       <div class="slide-inner">
         <div class="topline">
           <div class="course-mark"><span class="dot"></span><span>韓国側 ｜ 日本市場</span></div>
@@ -902,7 +1041,7 @@
       </div>
     </section>
 
-    <section class="slide" aria-label="9 / 17">
+    <section class="slide" aria-label="9 / 16">
       <div class="slide-inner">
         <div class="topline">
           <div class="course-mark"><span class="dot"></span><span>韓国側 ｜ 日本市場</span></div>
@@ -910,7 +1049,7 @@
         </div>
         <h2 class="guide-title">地方旅行のターゲット</h2>
         <div class="question-panel">
-          <p class="question-text">この地方旅行は、<br />どんな日本人観光客のためのものでしょうか。</p>
+          <p class="question-text">地方都市や地域コンテンツは見える。<br />では、「どんな日本人」？</p>
         </div>
         <div class="question-context align-left" aria-label="政策の要素">
           <span>地方都市</span><span>地域コンテンツ</span><span>商品化</span><span>情報発信</span>
@@ -918,59 +1057,34 @@
       </div>
     </section>
 
-    <section class="slide" aria-label="10 / 17">
+    <section class="slide" aria-label="10 / 16">
       <div class="slide-inner">
         <div class="topline">
           <div class="course-mark"><span class="dot"></span><span>政策比較</span></div>
           <div class="page-no">10</div>
         </div>
         <h2 class="guide-title">二つの政策を比較</h2>
-        <div class="policy-columns">
-          <div class="policy-column">
-            <h3>日本側 ｜ 韓国人市場</h3>
-            <ul class="compact-list">
-              <li>訪日経験</li>
-              <li>年齢</li>
-              <li>同行者</li>
-              <li>ターゲット別コンテンツ</li>
-              <li>情報発信</li>
-            </ul>
+        <div class="columns comparison-summary">
+          <div class="plain-block">
+            <div class="label">日本 → 韓国市場</div>
+            <p class="small">訪日経験・年代・同行者による</p>
+            <div class="big">ターゲットの細分化</div>
           </div>
-          <div class="policy-column">
-            <h3>韓国側 ｜ 日本人市場</h3>
-            <ul class="compact-list">
-              <li>日本市場</li>
-              <li>地方旅行・地方都市</li>
-              <li>地域コンテンツ</li>
-              <li>商品化</li>
-              <li>SNS・OTA・メディア</li>
-            </ul>
+          <div class="plain-block">
+            <div class="label">韓国 → 日本市場</div>
+            <p class="small">地方都市・地域コンテンツを活用した</p>
+            <div class="big">地方誘客</div>
           </div>
         </div>
         <p class="comparison-note">何が違いますか。</p>
       </div>
     </section>
 
-    <section class="slide" aria-label="11 / 17">
-      <div class="slide-inner">
-        <div class="topline">
-          <div class="course-mark"><span class="dot"></span><span>政策比較</span></div>
-          <div class="page-no">11</div>
-        </div>
-        <h2 class="guide-title">比較して考える</h2>
-        <div class="discussion-rows">
-          <div class="discussion-row"><span class="discussion-index">01</span><strong>なぜ、政策の方向が違うのでしょうか。</strong></div>
-          <div class="discussion-row"><span class="discussion-index">02</span><strong>ターゲットは、どこまで具体的ですか。</strong></div>
-        </div>
-        <p class="teacher-note">優劣ではなく、政策が観光客をどの単位で見ているかを確認</p>
-      </div>
-    </section>
-
-    <section class="slide" aria-label="12 / 17">
+    <section class="slide" aria-label="11 / 16">
       <div class="slide-inner">
         <div class="topline">
           <div class="course-mark"><span class="dot"></span><span>ターゲット設定</span></div>
-          <div class="page-no">12</div>
+          <div class="page-no">11</div>
         </div>
         <h2 class="guide-title">「日本人観光客」は、一つのターゲット？</h2>
         <div class="persona-compare">
@@ -989,11 +1103,11 @@
       </div>
     </section>
 
-    <section class="slide activity" aria-label="13 / 17">
+    <section class="slide activity" aria-label="12 / 16">
       <div class="slide-inner">
         <div class="topline">
           <div class="course-mark"><span class="dot"></span><span>Activity 01</span></div>
-          <div class="page-no">13</div>
+          <div class="page-no">12</div>
         </div>
         <div class="activity-tag">TEAM DISCUSSION</div>
         <h2 class="activity-title">この人に、どこをすすめる？</h2>
@@ -1008,11 +1122,11 @@
       </div>
     </section>
 
-    <section class="slide activity" aria-label="14 / 17">
+    <section class="slide activity" aria-label="13 / 16">
       <div class="slide-inner">
         <div class="topline">
           <div class="course-mark"><span class="dot"></span><span>Activity 02</span></div>
-          <div class="page-no">14</div>
+          <div class="page-no">13</div>
         </div>
         <div class="activity-tag">CHANGE ONE CONDITION</div>
         <h2 class="activity-title">条件を一つ変えたら？</h2>
@@ -1026,14 +1140,14 @@
       </div>
     </section>
 
-    <section class="slide activity" aria-label="15 / 17">
+    <section class="slide activity" aria-label="14 / 16">
       <div class="slide-inner">
         <div class="topline">
           <div class="course-mark"><span class="dot"></span><span>Activity 03</span></div>
-          <div class="page-no">15</div>
+          <div class="page-no">14</div>
         </div>
         <div class="activity-tag">KOREA TOURISM DATA LAB</div>
-        <h2 class="activity-title">データで確認する</h2>
+        <h2 class="activity-title">さっきの予想は、本当に合っている？</h2>
         <div class="source-line">
           <p class="source-name">韓国観光データラボ</p>
           <a class="source-link" href="https://datalab.visitkorea.or.kr/datalab/portal/nat/getNatFocTourAna.do" target="_blank" rel="noopener noreferrer">データを見る ↗</a>
@@ -1052,28 +1166,27 @@
       </div>
     </section>
 
-    <section class="slide" aria-label="16 / 17">
+    <section class="slide" aria-label="15 / 16">
       <div class="slide-inner">
         <div class="topline">
           <div class="course-mark"><span class="dot"></span><span>まとめ</span></div>
-          <div class="page-no">16</div>
+          <div class="page-no">15</div>
         </div>
-        <h2 class="guide-title">ターゲットを具体的にする</h2>
-        <div class="flow summary-flow" aria-label="ターゲットを具体化する順序">
-          <span>日本人</span><span class="arrow">→</span>
-          <span>年齢・性別</span><span class="arrow">→</span>
-          <span>同行者</span><span class="arrow">→</span>
-          <span>韓国への訪問経験</span>
+        <h2 class="guide-title">「日本人観光客」だけでは、まだ広い。</h2>
+        <div class="summary-axis" aria-label="ターゲットを具体化する基準">
+          <span>年齢・性別</span><span class="times">×</span>
+          <span>同行者</span><span class="times">×</span>
+          <span>訪問経験</span>
         </div>
         <p class="summary-line">誰にすすめるかが変われば、何をすすめるかも変わる。</p>
       </div>
     </section>
 
-    <section class="slide activity" aria-label="17 / 17">
+    <section class="slide activity" aria-label="16 / 16">
       <div class="slide-inner">
         <div class="topline">
           <div class="course-mark"><span class="dot"></span><span>Capstone</span></div>
-          <div class="page-no">17</div>
+          <div class="page-no">16</div>
         </div>
         <h2 class="guide-title">プロジェクトのターゲット</h2>
         <div class="question-panel">
