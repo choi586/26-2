@@ -699,6 +699,8 @@
 
     .profile-item:nth-child(-n + 2) { border-top: 0; }
 
+    .profile-item:last-child:nth-child(odd) { grid-column: 1 / -1; }
+
     .profile-key {
       color: var(--red);
       font-size: 16px;
@@ -1073,11 +1075,12 @@
         </div>
         <div class="activity-tag">TEAM DISCUSSION</div>
         <h2 class="activity-title">この人に、どこをすすめる？</h2>
-        <div class="profile-grid" aria-label="四つのターゲット条件">
+        <div class="profile-grid" aria-label="五つのターゲット条件">
           <div class="profile-item"><span class="profile-key">A</span><span>20代・女性・友人と旅行・初めての韓国</span></div>
           <div class="profile-item"><span class="profile-key">B</span><span>20代・男性・一人旅・3回目の韓国</span></div>
           <div class="profile-item"><span class="profile-key">C</span><span>30代・女性・夫婦旅行・2回目の韓国</span></div>
-          <div class="profile-item"><span class="profile-key">D</span><span>50代・女性・友人と旅行・5回目以上の韓国</span></div>
+          <div class="profile-item"><span class="profile-key">D</span><span>40代・子連れの家族旅行・初めての韓国</span></div>
+          <div class="profile-item"><span class="profile-key">E</span><span>50代・女性・友人と旅行・5回目以上の韓国</span></div>
         </div>
         <p class="activity-question">韓国のどこをすすめますか。なぜ、その場所ですか。</p>
         <p class="activity-note">チームで相談 → 短く発表</p>
