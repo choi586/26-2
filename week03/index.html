@@ -1,0 +1,1226 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="日本観光サービス キャップストーンデザイン 2026年度後期 3週目 データから「気になる」を見つける" />
+  <title>日本観光サービス キャップストーンデザイン｜3週目 データから「気になる」を見つける</title>
+  <style>
+    :root {
+      --red: #e60023;
+      --canvas: #ffffff;
+      --soft: #fbfbf9;
+      --panel: #f4f4f0;
+      --line: #d8d8d1;
+      --ink: #11110f;
+      --body: #343430;
+      --muted: #686861;
+      --ash: #92928b;
+      --matte: #e8e8e3;
+      --deck-scale: 1;
+    }
+
+    * { box-sizing: border-box; }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+      background: var(--matte);
+      color: var(--ink);
+      font-family: "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    button { font: inherit; }
+
+    .deck {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      width: 1280px;
+      height: 720px;
+      overflow: hidden;
+      background: var(--soft);
+      container-type: size;
+      transform: translate(-50%, -50%) scale(var(--deck-scale));
+      transform-origin: center center;
+      will-change: transform;
+    }
+
+    .slide {
+      position: absolute;
+      inset: 0;
+      display: none;
+      width: 100%;
+      height: 100%;
+      padding: 7cqh 7cqw 6cqh;
+      overflow: hidden;
+      background: var(--soft);
+    }
+
+    .slide.active { display: flex; }
+
+    .slide-inner {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: min(1280px, 100%);
+      height: 100%;
+      margin: 0 auto;
+    }
+
+    .topline {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .course-mark {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .dot {
+      flex: none;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--red);
+    }
+
+    .page-no {
+      color: var(--ash);
+      font-variant-numeric: tabular-nums;
+    }
+
+    h1,
+    h2,
+    h3,
+    p { margin: 0; }
+
+    h1,
+    h2,
+    .statement,
+    .prompt { text-wrap: balance; }
+
+    h1 {
+      font-size: clamp(50px, 6.2cqw, 88px);
+      line-height: 1.04;
+      letter-spacing: -0.04em;
+      font-weight: 800;
+    }
+
+    h2 {
+      max-width: 1180px;
+      font-size: clamp(38px, 4.1cqw, 64px);
+      line-height: 1.1;
+      letter-spacing: -0.035em;
+      font-weight: 800;
+    }
+
+    h3 {
+      font-size: clamp(24px, 2.1cqw, 34px);
+      line-height: 1.25;
+      font-weight: 800;
+    }
+
+    .guide-title {
+      font-size: clamp(42px, 4.2cqw, 64px);
+      letter-spacing: -0.03em;
+    }
+
+    .question-guide-title {
+      font-size: clamp(38px, 3.6cqw, 54px);
+      line-height: 1.18;
+    }
+
+    .lead {
+      max-width: 1040px;
+      margin-top: 28px;
+      color: var(--body);
+      font-size: clamp(24px, 2.15cqw, 33px);
+      line-height: 1.45;
+    }
+
+    .sub {
+      max-width: 1040px;
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: clamp(21px, 1.7cqw, 26px);
+      line-height: 1.55;
+    }
+
+    .accent { color: var(--red); }
+
+    .center {
+      align-items: center;
+      text-align: center;
+    }
+
+    .cover-title {
+      max-width: 1080px;
+      font-size: clamp(42px, 4.8cqw, 72px);
+      line-height: 1.08;
+    }
+
+    .cover-topic {
+      max-width: 980px;
+      margin-top: 26px;
+      color: #9a3f4d;
+      font-size: clamp(34px, 2.9cqw, 46px);
+      line-height: 1.2;
+      font-weight: 800;
+      text-wrap: balance;
+    }
+
+    .cover-instructor {
+      margin-top: 32px;
+      color: var(--muted);
+      font-size: clamp(20px, 1.6cqw, 25px);
+      font-weight: 700;
+      line-height: 1.5;
+    }
+
+    .statement {
+      max-width: 1120px;
+      font-size: clamp(44px, 5.2cqw, 76px);
+      line-height: 1.12;
+      letter-spacing: -0.04em;
+      font-weight: 800;
+    }
+
+    .question-statement {
+      max-width: 1040px;
+      font-size: clamp(48px, 5.4cqw, 78px);
+    }
+
+    .question-panel {
+      max-width: 1120px;
+      margin-top: 34px;
+      padding: 32px 36px;
+      border: 1px solid #e4e4dd;
+      border-radius: 16px;
+      background: var(--panel);
+    }
+
+    .question-panel .question-text {
+      color: var(--body);
+      font-size: clamp(36px, 3.45cqw, 46px);
+      font-weight: 700;
+      line-height: 1.35;
+      letter-spacing: -0.025em;
+      text-wrap: balance;
+    }
+
+    .content-panel {
+      max-width: 1120px;
+      margin-top: 34px;
+      padding: 28px 32px;
+      border: 1px solid #e4e4dd;
+      border-radius: 16px;
+      background: var(--panel);
+    }
+
+    .key-message {
+      max-width: 1120px;
+      margin-top: 34px;
+      padding: 30px 34px;
+      border: 1px solid #e4e4dd;
+      border-radius: 16px;
+      background: var(--panel);
+    }
+
+    .key-message strong {
+      display: block;
+      font-size: clamp(30px, 2.8cqw, 42px);
+      line-height: 1.35;
+    }
+
+    .axis-line {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px 20px;
+      margin-top: 24px;
+      color: var(--body);
+      font-size: clamp(22px, 1.9cqw, 29px);
+      font-weight: 800;
+    }
+
+    .axis-line span:not(:last-child)::after {
+      content: "×";
+      margin-left: 20px;
+      color: var(--red);
+      font-weight: 500;
+    }
+
+    .key-message .sub {
+      margin-top: 22px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+    }
+
+    .visit-contrast {
+      display: grid;
+      justify-items: center;
+      gap: 12px;
+      width: min(760px, 100%);
+      margin-top: 36px;
+      padding: 28px 34px;
+      border: 1px solid #e4e4dd;
+      border-radius: 16px;
+      background: var(--panel);
+    }
+
+    .visit-state {
+      color: var(--body);
+      font-size: clamp(29px, 2.55cqw, 39px);
+      font-weight: 800;
+      line-height: 1.35;
+    }
+
+    .visit-swap {
+      color: var(--red);
+      font-size: 30px;
+      font-weight: 500;
+      line-height: 1;
+    }
+
+    .columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: stretch;
+      margin-top: 36px;
+    }
+
+    .plain-block {
+      min-height: 190px;
+      padding: 28px 30px;
+      border: 1px solid #e4e4dd;
+      border-radius: 16px;
+      background: var(--panel);
+    }
+
+    .plain-block .label {
+      margin-bottom: 14px;
+      color: var(--red);
+      font-size: 16px;
+      font-weight: 800;
+    }
+
+    .plain-block .big {
+      font-size: clamp(29px, 2.55cqw, 39px);
+      line-height: 1.35;
+      font-weight: 800;
+    }
+
+    .plain-block .small {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: clamp(19px, 1.55cqw, 24px);
+      line-height: 1.5;
+    }
+
+    .source-line {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 24px;
+      max-width: 1120px;
+      margin-top: 18px;
+    }
+
+    .source-name {
+      color: var(--muted);
+      font-size: clamp(20px, 1.65cqw, 25px);
+      line-height: 1.45;
+    }
+
+    .source-link {
+      flex: none;
+      color: var(--red);
+      font-size: 16px;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .source-link:hover,
+    .source-link:focus-visible { text-decoration: underline; }
+
+    .policy-rows,
+    .target-rows,
+    .discussion-rows {
+      max-width: 1120px;
+      margin-top: 30px;
+      padding: 6px 30px;
+      border: 1px solid #e4e4dd;
+      border-radius: 16px;
+      background: var(--panel);
+    }
+
+    .policy-row {
+      display: grid;
+      grid-template-columns: 190px minmax(0, 1fr);
+      gap: 28px;
+      align-items: center;
+      min-height: 100px;
+      padding: 18px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .policy-row:first-child,
+    .target-row:first-child,
+    .discussion-row:first-child { border-top: 0; }
+
+    .policy-row .label {
+      color: var(--red);
+      font-size: 17px;
+      font-weight: 900;
+    }
+
+    .policy-row strong {
+      color: var(--body);
+      font-size: clamp(26px, 2.2cqw, 34px);
+      line-height: 1.35;
+    }
+
+    .target-row {
+      display: grid;
+      grid-template-columns: 64px 1.05fr 0.8fr 1.5fr;
+      gap: 20px;
+      align-items: center;
+      min-height: 90px;
+      padding: 16px 0;
+      border-top: 1px solid var(--line);
+      color: var(--body);
+      font-size: clamp(20px, 1.7cqw, 26px);
+      line-height: 1.35;
+    }
+
+    .target-index {
+      color: var(--red);
+      font-size: 16px;
+      font-weight: 900;
+    }
+
+    .target-row strong { color: var(--ink); }
+
+    .flow {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: clamp(26px, 2.5cqw, 38px);
+      font-weight: 800;
+    }
+
+    .flow .arrow {
+      color: var(--ash);
+      font-weight: 400;
+    }
+
+    .reading-flow {
+      width: max-content;
+      max-width: 100%;
+      margin-top: 38px;
+      padding: 28px 32px;
+      border: 1px solid #e4e4dd;
+      border-radius: 16px;
+      background: var(--panel);
+      font-size: clamp(32px, 3.15cqw, 48px);
+    }
+
+    .target-change-flow {
+      max-width: 1120px;
+      margin-top: 26px;
+      padding: 18px 30px;
+      border: 1px solid #e4e4dd;
+      border-radius: 16px;
+      background: var(--panel);
+    }
+
+    .target-change-row {
+      display: grid;
+      grid-template-columns: 170px minmax(0, 1fr);
+      gap: 24px;
+      align-items: center;
+      min-height: 56px;
+    }
+
+    .target-change-label {
+      color: var(--red);
+      font-size: clamp(21px, 1.75cqw, 27px);
+      font-weight: 900;
+    }
+
+    .target-change-copy {
+      color: var(--body);
+      font-size: clamp(20px, 1.65cqw, 25px);
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    .target-change-arrow {
+      height: 24px;
+      color: var(--ash);
+      font-size: 24px;
+      line-height: 1;
+      text-align: center;
+    }
+
+    .target-change-summary {
+      max-width: 1120px;
+      margin-top: 22px;
+      color: var(--body);
+      font-size: clamp(24px, 2cqw, 31px);
+      font-weight: 800;
+      line-height: 1.4;
+    }
+
+    .policy-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      max-width: 1120px;
+      margin-top: 30px;
+      overflow: hidden;
+      border: 1px solid #e4e4dd;
+      border-radius: 16px;
+      background: var(--panel);
+    }
+
+    .policy-column {
+      min-width: 0;
+      padding: 26px 30px 28px;
+    }
+
+    .policy-column + .policy-column { border-left: 1px solid var(--line); }
+
+    .policy-column h3 {
+      margin-bottom: 18px;
+      color: var(--red);
+      font-size: 20px;
+    }
+
+    .compact-list {
+      display: grid;
+      gap: 13px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .compact-list li {
+      color: var(--body);
+      font-size: clamp(20px, 1.65cqw, 25px);
+      line-height: 1.4;
+    }
+
+    .compact-list li::before {
+      content: "";
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      margin: 0 13px 3px 0;
+      border-radius: 50%;
+      background: var(--red);
+    }
+
+    .question-context {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px 16px;
+      margin-top: 38px;
+      color: var(--muted);
+      font-size: clamp(18px, 1.5cqw, 23px);
+      font-weight: 700;
+    }
+
+    .question-context.align-left { justify-content: flex-start; }
+
+    .question-context span:not(:last-child)::after {
+      content: "·";
+      margin-left: 16px;
+      color: var(--red);
+    }
+
+    .comparison-note {
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: clamp(19px, 1.55cqw, 24px);
+      line-height: 1.45;
+    }
+
+    .comparison-summary { margin-top: 32px; }
+
+    .comparison-summary .plain-block {
+      min-height: 220px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .comparison-summary .small {
+      margin-top: 0;
+      color: var(--body);
+      font-size: clamp(21px, 1.7cqw, 26px);
+    }
+
+    .comparison-summary .big { margin-top: 16px; }
+
+    .discussion-row {
+      display: grid;
+      grid-template-columns: 56px minmax(0, 1fr);
+      gap: 18px;
+      align-items: center;
+      min-height: 112px;
+      padding: 20px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .discussion-index {
+      color: var(--red);
+      font-size: 16px;
+      font-weight: 900;
+    }
+
+    .discussion-row strong {
+      font-size: clamp(27px, 2.35cqw, 36px);
+      line-height: 1.35;
+    }
+
+    .teacher-note {
+      max-width: 1120px;
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: clamp(18px, 1.5cqw, 23px);
+      line-height: 1.5;
+    }
+
+    .persona-compare {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      max-width: 1120px;
+      margin-top: 32px;
+    }
+
+    .persona {
+      padding: 28px 30px;
+      border: 1px solid #e4e4dd;
+      border-radius: 16px;
+      background: var(--panel);
+    }
+
+    .persona .label {
+      color: var(--red);
+      font-size: 16px;
+      font-weight: 900;
+    }
+
+    .persona h3 {
+      margin-top: 13px;
+      font-size: clamp(29px, 2.5cqw, 38px);
+    }
+
+    .persona p {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: clamp(20px, 1.6cqw, 25px);
+      line-height: 1.5;
+    }
+
+    .persona-question {
+      margin-top: 28px;
+      font-size: clamp(27px, 2.25cqw, 35px);
+      font-weight: 800;
+    }
+
+    .activity { background: var(--canvas); }
+
+    .activity-tag {
+      width: max-content;
+      margin-bottom: 20px;
+      color: var(--red);
+      font-size: 15px;
+      font-weight: 900;
+      letter-spacing: 0.05em;
+    }
+
+    .prompt {
+      max-width: 1120px;
+      font-size: clamp(42px, 5cqw, 74px);
+      line-height: 1.12;
+      letter-spacing: -0.04em;
+      font-weight: 800;
+    }
+
+    .activity-title {
+      font-size: clamp(40px, 3.7cqw, 56px);
+    }
+
+    .profile-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 28px;
+      max-width: 1120px;
+      margin-top: 24px;
+      padding: 4px 28px;
+      border: 1px solid #e4e4dd;
+      border-radius: 16px;
+      background: var(--panel);
+    }
+
+    .profile-item {
+      display: grid;
+      grid-template-columns: 42px minmax(0, 1fr);
+      gap: 13px;
+      align-items: center;
+      min-height: 80px;
+      padding: 14px 0;
+      border-top: 1px solid var(--line);
+      color: var(--body);
+      font-size: clamp(18px, 1.45cqw, 22px);
+      line-height: 1.4;
+    }
+
+    .profile-item:nth-child(-n + 2) { border-top: 0; }
+
+    .profile-item:last-child:nth-child(odd) { grid-column: 1 / -1; }
+
+    .profile-key {
+      color: var(--red);
+      font-size: 16px;
+      font-weight: 900;
+    }
+
+    .activity-question {
+      margin-top: 24px;
+      color: var(--body);
+      font-size: clamp(23px, 1.9cqw, 29px);
+      line-height: 1.5;
+      font-weight: 800;
+    }
+
+    .activity-note {
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: clamp(18px, 1.45cqw, 22px);
+      line-height: 1.5;
+    }
+
+    .change-panel {
+      max-width: 1120px;
+      margin-top: 30px;
+      padding: 8px 30px;
+      border: 1px solid #e4e4dd;
+      border-radius: 16px;
+      background: var(--panel);
+    }
+
+    .change-row {
+      display: grid;
+      grid-template-columns: 1fr 70px 1fr;
+      align-items: center;
+      min-height: 68px;
+      border-top: 1px solid var(--line);
+      color: var(--body);
+      font-size: clamp(20px, 1.65cqw, 25px);
+      font-weight: 800;
+    }
+
+    .change-row:first-child { border-top: 0; }
+    .change-row .arrow { color: var(--red); text-align: center; }
+
+    .data-checks {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      max-width: 1120px;
+      margin-top: 30px;
+      overflow: hidden;
+      border: 1px solid #e4e4dd;
+      border-radius: 16px;
+      background: var(--panel);
+    }
+
+    .data-check {
+      display: flex;
+      align-items: center;
+      min-height: 150px;
+      padding: 24px 26px;
+      color: var(--body);
+      font-size: clamp(20px, 1.65cqw, 25px);
+      line-height: 1.4;
+      font-weight: 800;
+    }
+
+    .data-check + .data-check { border-left: 1px solid var(--line); }
+
+    .summary-flow {
+      width: max-content;
+      max-width: 100%;
+      margin-top: 38px;
+      padding: 24px 28px;
+      border: 1px solid #e4e4dd;
+      border-radius: 16px;
+      background: var(--panel);
+      font-size: clamp(26px, 2.35cqw, 36px);
+    }
+
+    .summary-line {
+      max-width: 1080px;
+      margin-top: 30px;
+      color: var(--body);
+      font-size: clamp(30px, 2.75cqw, 42px);
+      line-height: 1.4;
+      font-weight: 800;
+    }
+
+    .summary-axis {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px 20px;
+      width: max-content;
+      max-width: 100%;
+      margin-top: 34px;
+      padding: 24px 28px;
+      border: 1px solid #e4e4dd;
+      border-radius: 16px;
+      background: var(--panel);
+      color: var(--body);
+      font-size: clamp(27px, 2.35cqw, 36px);
+      font-weight: 800;
+    }
+
+    .summary-axis .times {
+      color: var(--red);
+      font-weight: 500;
+    }
+    .five-ways,
+    .example-stack,
+    .hypothesis-list,
+    .assignment-steps {
+      max-width: 1120px;
+      margin-top: 30px;
+      padding: 6px 30px;
+      border: 1px solid #e4e4dd;
+      border-radius: 16px;
+      background: var(--panel);
+    }
+
+    .five-ways {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 28px;
+    }
+
+    .way-item {
+      display: grid;
+      grid-template-columns: 44px 140px 1fr;
+      gap: 14px;
+      align-items: center;
+      min-height: 74px;
+      padding: 14px 0;
+      border-top: 1px solid var(--line);
+      color: var(--body);
+      font-size: clamp(24px, 2cqw, 30px);
+      line-height: 1.38;
+    }
+
+    .way-item:nth-child(-n + 2) { border-top: 0; }
+
+    .way-no,
+    .example-label,
+    .hypothesis-key,
+    .assignment-no {
+      color: var(--red);
+      font-size: 16px;
+      font-weight: 900;
+    }
+
+    .way-key {
+      color: var(--ink);
+      font-weight: 900;
+    }
+
+    .way-q {
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .discover-flow {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      max-width: 1120px;
+      margin-top: 34px;
+      padding: 28px 30px;
+      border: 1px solid #e4e4dd;
+      border-radius: 16px;
+      background: var(--panel);
+      color: var(--body);
+      font-size: clamp(26px, 2.2cqw, 34px);
+      font-weight: 800;
+    }
+
+    .discover-flow .arrow {
+      color: var(--red);
+      font-weight: 500;
+    }
+
+    .example-row {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 24px;
+      align-items: center;
+      min-height: 78px;
+      padding: 14px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .example-row:first-child { border-top: 0; }
+
+    .example-copy {
+      color: var(--body);
+      font-size: clamp(25px, 2.05cqw, 31px);
+      line-height: 1.38;
+      font-weight: 800;
+    }
+
+    .hypothesis-item,
+    .assignment-step {
+      display: grid;
+      grid-template-columns: 50px 1fr;
+      gap: 16px;
+      align-items: center;
+      min-height: 66px;
+      padding: 12px 0;
+      border-top: 1px solid var(--line);
+      color: var(--body);
+      font-size: clamp(25px, 2.05cqw, 31px);
+      line-height: 1.38;
+      font-weight: 800;
+    }
+
+    .hypothesis-item:first-child,
+    .assignment-step:first-child { border-top: 0; }
+
+    .insight-compare {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      max-width: 1120px;
+      margin-top: 32px;
+    }
+
+    .insight-box {
+      min-height: 220px;
+      padding: 28px 30px;
+      border: 1px solid #e4e4dd;
+      border-radius: 16px;
+      background: var(--panel);
+    }
+
+    .insight-box .label {
+      margin-bottom: 14px;
+      color: var(--red);
+      font-size: 16px;
+      font-weight: 900;
+    }
+
+    .insight-box .big {
+      color: var(--body);
+      font-size: clamp(27px, 2.2cqw, 34px);
+      line-height: 1.42;
+      font-weight: 800;
+    }
+
+    .activity-keywords .data-check {
+      min-height: 92px;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .controls {
+      position: fixed;
+      right: 18px;
+      bottom: 16px;
+      z-index: 20;
+      display: flex;
+      gap: 8px;
+      opacity: 0.12;
+      transition: opacity 150ms ease;
+    }
+
+    .controls:hover,
+    .controls:focus-within { opacity: 1; }
+
+    .controls button {
+      width: 42px;
+      height: 42px;
+      padding: 0;
+      border: 0;
+      border-radius: 50%;
+      background: var(--panel);
+      color: var(--ink);
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .controls { transition: none; }
+    }
+
+    @media (hover: none), (pointer: coarse) {
+      .controls { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="deck" aria-live="polite">
+
+    <section class="slide active" aria-label="1 / 14">
+      <div class="slide-inner center">
+        <div class="topline"><div class="course-mark"><span class="dot"></span><span>聖公会大学 ｜ 2026年度 後期 ｜ 3週目</span></div><div class="page-no">01</div></div>
+        <h1 class="cover-title">日本観光サービス<br />キャップストーンデザイン</h1>
+        <p class="cover-topic">データから「気になる」を見つける</p>
+        <p class="cover-instructor">担当 崔ナリ</p>
+      </div>
+    </section>
+
+    <section class="slide" aria-label="2 / 14">
+      <div class="slide-inner center">
+        <div class="topline"><div class="course-mark"><span class="dot"></span><span>今日のテーマ</span></div><div class="page-no">02</div></div>
+        <div class="statement question-statement">データを見て、何がわかる？<br />そこから何を考える？</div>
+      </div>
+    </section>
+
+    <section class="slide" aria-label="3 / 14">
+      <div class="slide-inner">
+        <div class="topline"><div class="course-mark"><span class="dot"></span><span>データを見る</span></div><div class="page-no">03</div></div>
+        <h2 class="guide-title">データ分析の最初は、<br />「気になる」を見つけること。</h2>
+        <div class="question-panel"><p class="question-text">「1位なのが意外」でもいい。<br />「なぜ？」と思ったところから始める。</p></div>
+      </div>
+    </section>
+
+    <section class="slide" aria-label="4 / 14">
+      <div class="slide-inner">
+        <div class="topline"><div class="course-mark"><span class="dot"></span><span>データを見る</span></div><div class="page-no">04</div></div>
+        <h2 class="guide-title">「気になる」は、どこから見つける？</h2>
+        <div class="five-ways">
+          <div class="way-item"><span class="way-no">01</span><span class="way-key">順位</span><span class="way-q">何が1位？</span></div>
+          <div class="way-item"><span class="way-no">02</span><span class="way-key">差</span><span class="way-q">何と何が違う？</span></div>
+          <div class="way-item"><span class="way-no">03</span><span class="way-key">変化</span><span class="way-q">増えた？ 減った？</span></div>
+          <div class="way-item"><span class="way-no">04</span><span class="way-key">予想</span><span class="way-q">思っていた通り？</span></div>
+          <div class="way-item"><span class="way-no">05</span><span class="way-key">比較</span><span class="way-q">日本人だけの特徴は？</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" aria-label="5 / 14">
+      <div class="slide-inner">
+        <div class="topline"><div class="course-mark"><span class="dot"></span><span>観光データ</span></div><div class="page-no">05</div></div>
+        <h2 class="guide-title">どこでデータを見る？</h2>
+        <div class="columns">
+          <div class="plain-block"><div class="label">韓国</div><div class="big">韓国観光データラボ</div><p class="small">国籍別・地域別・テーマ別など</p><a class="source-link" href="https://datalab.visitkorea.or.kr" target="_blank" rel="noopener noreferrer">データを見る ↗</a></div>
+          <div class="plain-block"><div class="label">日本</div><div class="big">JNTO 日本の観光統計データ</div><p class="small">各国・地域・旅行支出・買い物など</p><a class="source-link" href="https://statistics.jnto.go.jp" target="_blank" rel="noopener noreferrer">データを見る ↗</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide activity" aria-label="6 / 14">
+      <div class="slide-inner">
+        <div class="topline"><div class="course-mark"><span class="dot"></span><span>Activity 01</span></div><div class="page-no">06</div></div>
+        <div class="activity-tag">ACTIVITY 01</div>
+        <h2 class="activity-title">データから「あれ？」を一つ探し、<br />仮説を立てよう</h2>
+        <div class="data-checks activity-keywords"><div class="data-check">面白い</div><div class="data-check">意外</div><div class="data-check">なぜ？</div></div>
+        <div class="example-stack">
+          <div class="example-row"><span class="example-label">あれ？</span><span class="example-copy">「私が気になったのは、＿＿＿＿です。」</span></div>
+          <div class="example-row"><span class="example-label">なぜ？</span><span class="example-copy">「もしかすると、＿＿＿＿だからではないか。」</span></div>
+        </div>
+        <p class="activity-note">データ画面のスクリーンショットも一緒に。</p>
+      </div>
+    </section>
+
+    <section class="slide" aria-label="7 / 14">
+      <div class="slide-inner">
+        <div class="topline"><div class="course-mark"><span class="dot"></span><span>みんなの発見</span></div><div class="page-no">07</div></div>
+        <h2 class="guide-title">同じデータを見ても、<br />気になるところは違う。</h2>
+        <div class="question-panel"><p class="question-text">他の人の発見も見てみよう。<br />一番「なぜ？」と思ったものはどれ？</p></div>
+      </div>
+    </section>
+
+    <section class="slide" aria-label="8 / 14">
+      <div class="slide-inner">
+        <div class="topline"><div class="course-mark"><span class="dot"></span><span>発見から質問へ</span></div><div class="page-no">08</div></div>
+        <h2 class="guide-title">「面白い」で終わらせない。</h2>
+        <div class="discover-flow"><span>発見</span><span class="arrow">→</span><span>「なぜ？」</span><span class="arrow">→</span><span>質問</span></div>
+        <p class="summary-line">「○○が1位だった」→「なぜ日本人は○○を多く訪れる？」</p>
+      </div>
+    </section>
+
+    <section class="slide" aria-label="9 / 14">
+      <div class="slide-inner">
+        <div class="topline"><div class="course-mark"><span class="dot"></span><span>仮説</span></div><div class="page-no">09</div></div>
+        <h2 class="guide-title">仮説は「正解」ではない。</h2>
+        <div class="question-panel"><p class="question-text">もしかすると、<br />＿＿＿＿だからではないか。</p></div>
+        <p class="sub">まず自分なりの理由を考える。それが仮説。</p>
+      </div>
+    </section>
+
+    <section class="slide" aria-label="10 / 14">
+      <div class="slide-inner">
+        <div class="topline"><div class="course-mark"><span class="dot"></span><span>仮説</span></div><div class="page-no">10</div></div>
+        <h2 class="guide-title">同じデータから、<br />複数の仮説が作れる。</h2>
+        <div class="example-stack">
+          <div class="example-row"><span class="example-label">データ</span><span class="example-copy">50代の日本人訪韓客が少ない。</span></div>
+          <div class="example-row"><span class="example-label">仮説 A</span><span class="example-copy">韓国旅行への関心が低い？</span></div>
+          <div class="example-row"><span class="example-label">仮説 B</span><span class="example-copy">海外旅行そのものが少ない？</span></div>
+          <div class="example-row"><span class="example-label">仮説 C</span><span class="example-copy">別の旅行スタイルを選んでいる？</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" aria-label="11 / 14">
+      <div class="slide-inner">
+        <div class="topline"><div class="course-mark"><span class="dot"></span><span>仮説を調べる</span></div><div class="page-no">11</div></div>
+        <h2 class="guide-title">何を調べれば、<br />この仮説を確認できる？</h2>
+        <div class="hypothesis-list">
+          <div class="hypothesis-item"><span class="hypothesis-key">01</span><span>他の観光統計・年代別データ</span></div>
+          <div class="hypothesis-item"><span class="hypothesis-key">02</span><span>他の国・地域との比較</span></div>
+          <div class="hypothesis-item"><span class="hypothesis-key">03</span><span>SNS・口コミ・レビュー</span></div>
+          <div class="hypothesis-item"><span class="hypothesis-key">04</span><span>記事・観光機関の調査・アンケート</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" aria-label="12 / 14">
+      <div class="slide-inner">
+        <div class="topline"><div class="course-mark"><span class="dot"></span><span>インサイト</span></div><div class="page-no">12</div></div>
+        <h2 class="guide-title">データとインサイトは違う。</h2>
+        <div class="insight-compare">
+          <div class="insight-box"><div class="label">データ・発見</div><div class="big">日本人観光客は<br />○○を多く訪れている。</div></div>
+          <div class="insight-box"><div class="label">インサイト</div><div class="big">なぜそうなるのかを調べ、<br />そこから考えた意味や示唆。</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" aria-label="13 / 14">
+      <div class="slide-inner">
+        <div class="topline"><div class="course-mark"><span class="dot"></span><span>個人課題</span></div><div class="page-no">13</div></div>
+        <h2 class="guide-title">データに基づく韓日観光市場調査</h2>
+        <div class="assignment-steps">
+          <div class="assignment-step"><span class="assignment-no">01</span><span>気になるデータを見つける</span></div>
+          <div class="assignment-step"><span class="assignment-no">02</span><span>「なぜ？」を考える</span></div>
+          <div class="assignment-step"><span class="assignment-no">03</span><span>仮説を立てる</span></div>
+          <div class="assignment-step"><span class="assignment-no">04</span><span>追加データ・資料を調査する</span></div>
+          <div class="assignment-step"><span class="assignment-no">05</span><span>自分のインサイトをまとめる</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" aria-label="14 / 14">
+      <div class="slide-inner">
+        <div class="topline"><div class="course-mark"><span class="dot"></span><span>まとめ</span></div><div class="page-no">14</div></div>
+        <h2 class="guide-title">データは、<br />サービスのヒントになる。</h2>
+        <div class="summary-axis"><span>気になる</span><span class="times">→</span><span>なぜ？</span><span class="times">→</span><span>仮説</span><span class="times">→</span><span>調査</span><span class="times">→</span><span>インサイト</span></div>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="controls" aria-label="スライド操作">
+    <button id="prev" type="button" aria-label="前のスライド">←</button>
+    <button id="next" type="button" aria-label="次のスライド">→</button>
+  </div>
+
+  <script>
+    (() => {
+      const deck = document.querySelector(".deck");
+      const slides = [...document.querySelectorAll(".slide")];
+      const deckWidth = 1280;
+      const deckHeight = 720;
+      let index = 0;
+
+      function fitDeck() {
+        const scale = Math.min(window.innerWidth / deckWidth, window.innerHeight / deckHeight);
+        deck.style.setProperty("--deck-scale", String(scale));
+      }
+
+      function show(target) {
+        index = Math.max(0, Math.min(target, slides.length - 1));
+        slides.forEach((slide, slideIndex) => {
+          const isActive = slideIndex === index;
+          slide.classList.toggle("active", isActive);
+          slide.setAttribute("aria-hidden", String(!isActive));
+        });
+        history.replaceState(null, "", `#${index + 1}`);
+      }
+
+      function next() { show(index + 1); }
+      function previous() { show(index - 1); }
+
+      document.getElementById("next").addEventListener("click", next);
+      document.getElementById("prev").addEventListener("click", previous);
+      window.addEventListener("resize", fitDeck, { passive: true });
+      document.addEventListener("fullscreenchange", fitDeck);
+
+      document.addEventListener("keydown", (event) => {
+        if (["ArrowRight", "PageDown", " "].includes(event.key)) {
+          event.preventDefault();
+          next();
+        }
+        if (["ArrowLeft", "PageUp"].includes(event.key)) {
+          event.preventDefault();
+          previous();
+        }
+        if (event.key === "Home") {
+          event.preventDefault();
+          show(0);
+        }
+        if (event.key === "End") {
+          event.preventDefault();
+          show(slides.length - 1);
+        }
+        if (event.key.toLowerCase() === "f") {
+          if (!document.fullscreenElement) document.documentElement.requestFullscreen?.();
+          else document.exitFullscreen?.();
+        }
+      });
+
+      document.addEventListener("click", (event) => {
+        if (event.target.closest("a, button")) return;
+        const deckRect = deck.getBoundingClientRect();
+        const insideDeck = event.clientX >= deckRect.left
+          && event.clientX <= deckRect.right
+          && event.clientY >= deckRect.top
+          && event.clientY <= deckRect.bottom;
+        if (!insideDeck) return;
+        const horizontalPosition = (event.clientX - deckRect.left) / deckRect.width;
+        if (horizontalPosition > 0.72) next();
+        else if (horizontalPosition < 0.28) previous();
+      });
+
+      const hash = Number.parseInt(location.hash.slice(1), 10);
+      if (Number.isFinite(hash)) index = Math.max(0, Math.min(hash - 1, slides.length - 1));
+      fitDeck();
+      show(index);
+    })();
+  </script>
+</body>
+</html>
