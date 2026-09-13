@@ -956,6 +956,113 @@
       text-align: center;
     }
 
+    .review-rows .policy-row {
+      min-height: 82px;
+    }
+
+    .jump-link {
+      display: inline-flex;
+      align-items: center;
+      width: max-content;
+      max-width: 100%;
+      margin-top: 24px;
+      padding: 14px 18px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--canvas);
+      color: var(--red);
+      font-size: 18px;
+      font-weight: 800;
+      line-height: 1.35;
+      text-decoration: none;
+    }
+
+    .jump-link:hover,
+    .jump-link:focus-visible {
+      border-color: var(--red);
+      text-decoration: underline;
+    }
+
+    .bonus-slide .content-panel,
+    .bonus-slide .example-stack,
+    .bonus-slide .columns,
+    .bonus-slide .five-ways,
+    .bonus-slide .policy-columns {
+      margin-top: 24px;
+    }
+
+    .bonus-slide .compact-list li {
+      font-size: clamp(21px, 1.7cqw, 26px);
+    }
+
+    .bonus-compact .example-row {
+      min-height: 64px;
+      padding: 11px 0;
+    }
+
+    .bonus-compact .example-copy {
+      font-size: clamp(22px, 1.85cqw, 28px);
+    }
+
+    .bonus-summary {
+      max-width: 1120px;
+      margin-top: 24px;
+      color: var(--body);
+      font-size: clamp(27px, 2.35cqw, 36px);
+      line-height: 1.4;
+      font-weight: 800;
+      text-wrap: balance;
+    }
+
+    .bonus-return {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      color: var(--muted);
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .bonus-return:hover,
+    .bonus-return:focus-visible {
+      color: var(--red);
+      text-decoration: underline;
+    }
+
+    .bonus-actions .way-item {
+      grid-template-columns: 38px 135px minmax(0, 1fr);
+      min-height: 62px;
+      padding: 10px 0;
+      font-size: clamp(20px, 1.65cqw, 25px);
+    }
+
+    .bonus-actions .way-item:last-child:nth-child(odd) {
+      grid-column: 1 / -1;
+    }
+
+    .contrast-copy {
+      color: var(--body);
+      font-size: clamp(27px, 2.3cqw, 35px);
+      line-height: 1.4;
+      font-weight: 800;
+    }
+
+    .factor-line {
+      max-width: 1120px;
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: clamp(21px, 1.7cqw, 26px);
+      line-height: 1.5;
+      font-weight: 700;
+      text-wrap: balance;
+    }
+
+    .bonus-final-statement {
+      max-width: 1060px;
+      font-size: clamp(40px, 4.3cqw, 62px);
+    }
+
     .controls {
       position: fixed;
       right: 18px;
@@ -994,7 +1101,7 @@
 <body>
   <main class="deck" aria-live="polite">
 
-    <section class="slide active" aria-label="1 / 14">
+    <section class="slide active" aria-label="1 / 23">
       <div class="slide-inner center">
         <div class="topline"><div class="course-mark"><span class="dot"></span><span>聖公会大学 ｜ 2026年度 後期 ｜ 3週目</span></div><div class="page-no">01</div></div>
         <h1 class="cover-title">日本観光サービス<br />キャップストーンデザイン</h1>
@@ -1003,24 +1110,38 @@
       </div>
     </section>
 
-    <section class="slide" aria-label="2 / 14">
+    <section class="slide" aria-label="2 / 23">
+      <div class="slide-inner">
+        <div class="topline"><div class="course-mark"><span class="dot"></span><span>先週の振り返り</span></div><div class="page-no">02</div></div>
+        <h2 class="guide-title">観光政策とターゲット設定</h2>
+        <div class="policy-rows review-rows">
+          <div class="policy-row"><span class="label">政策</span><strong>観光需要を地方へ分散</strong></div>
+          <div class="policy-row"><span class="label">ターゲット</span><strong>年代・関心別に具体化</strong></div>
+          <div class="policy-row"><span class="label">20〜30代</span><strong>地方・小都市への旅行</strong></div>
+          <div class="policy-row"><span class="label">50代</span><strong>ゴルフなどの高付加価値旅行</strong></div>
+        </div>
+        <a class="jump-link" href="#16" data-jump-to="16">BONUS｜身近な旅行選択から、もう少し考える →</a>
+      </div>
+    </section>
+
+    <section class="slide" aria-label="3 / 23" tabindex="-1">
       <div class="slide-inner center">
-        <div class="topline"><div class="course-mark"><span class="dot"></span><span>今日のテーマ</span></div><div class="page-no">02</div></div>
+        <div class="topline"><div class="course-mark"><span class="dot"></span><span>今日のテーマ</span></div><div class="page-no">03</div></div>
         <div class="statement question-statement">データを見て、何がわかる？<br />そこから何を考える？</div>
       </div>
     </section>
 
-    <section class="slide" aria-label="3 / 14">
+    <section class="slide" aria-label="4 / 23">
       <div class="slide-inner">
-        <div class="topline"><div class="course-mark"><span class="dot"></span><span>データを見る</span></div><div class="page-no">03</div></div>
+        <div class="topline"><div class="course-mark"><span class="dot"></span><span>データを見る</span></div><div class="page-no">04</div></div>
         <h2 class="guide-title">データ分析の最初は、<br />「気になる」を見つけること。</h2>
         <div class="question-panel"><p class="question-text">「1位なのが意外」でもいい。<br />「なぜ？」と思ったところから始める。</p></div>
       </div>
     </section>
 
-    <section class="slide" aria-label="4 / 14">
+    <section class="slide" aria-label="5 / 23">
       <div class="slide-inner">
-        <div class="topline"><div class="course-mark"><span class="dot"></span><span>データを見る</span></div><div class="page-no">04</div></div>
+        <div class="topline"><div class="course-mark"><span class="dot"></span><span>データを見る</span></div><div class="page-no">05</div></div>
         <h2 class="guide-title">「気になる」は、どこから見つける？</h2>
         <div class="five-ways">
           <div class="way-item"><span class="way-no">01</span><span class="way-key">順位</span><span class="way-q">何が1位？</span></div>
@@ -1032,9 +1153,9 @@
       </div>
     </section>
 
-    <section class="slide" aria-label="5 / 14">
+    <section class="slide" aria-label="6 / 23">
       <div class="slide-inner">
-        <div class="topline"><div class="course-mark"><span class="dot"></span><span>観光データ</span></div><div class="page-no">05</div></div>
+        <div class="topline"><div class="course-mark"><span class="dot"></span><span>観光データ</span></div><div class="page-no">06</div></div>
         <h2 class="guide-title">どこでデータを見る？</h2>
         <div class="columns">
           <div class="plain-block"><div class="label">韓国</div><div class="big">韓国観光データラボ</div><p class="small">国籍別・地域別・テーマ別など</p><a class="source-link" href="https://datalab.visitkorea.or.kr" target="_blank" rel="noopener noreferrer">データを見る ↗</a></div>
@@ -1043,9 +1164,9 @@
       </div>
     </section>
 
-    <section class="slide activity" aria-label="6 / 14">
+    <section class="slide activity" aria-label="7 / 23">
       <div class="slide-inner">
-        <div class="topline"><div class="course-mark"><span class="dot"></span><span>Activity 01</span></div><div class="page-no">06</div></div>
+        <div class="topline"><div class="course-mark"><span class="dot"></span><span>Activity 01</span></div><div class="page-no">07</div></div>
         <div class="activity-tag">ACTIVITY 01</div>
         <h2 class="activity-title">データから「あれ？」を一つ探し、<br />仮説を立てよう</h2>
         <div class="data-checks activity-keywords"><div class="data-check">面白い</div><div class="data-check">意外</div><div class="data-check">なぜ？</div></div>
@@ -1057,35 +1178,35 @@
       </div>
     </section>
 
-    <section class="slide" aria-label="7 / 14">
+    <section class="slide" aria-label="8 / 23">
       <div class="slide-inner">
-        <div class="topline"><div class="course-mark"><span class="dot"></span><span>みんなの発見</span></div><div class="page-no">07</div></div>
+        <div class="topline"><div class="course-mark"><span class="dot"></span><span>みんなの発見</span></div><div class="page-no">08</div></div>
         <h2 class="guide-title">同じデータを見ても、<br />気になるところは違う。</h2>
         <div class="question-panel"><p class="question-text">他の人の発見も見てみよう。<br />一番「なぜ？」と思ったものはどれ？</p></div>
       </div>
     </section>
 
-    <section class="slide" aria-label="8 / 14">
+    <section class="slide" aria-label="9 / 23">
       <div class="slide-inner">
-        <div class="topline"><div class="course-mark"><span class="dot"></span><span>発見から質問へ</span></div><div class="page-no">08</div></div>
+        <div class="topline"><div class="course-mark"><span class="dot"></span><span>発見から質問へ</span></div><div class="page-no">09</div></div>
         <h2 class="guide-title">「面白い」で終わらせない。</h2>
         <div class="discover-flow"><span>発見</span><span class="arrow">→</span><span>「なぜ？」</span><span class="arrow">→</span><span>質問</span></div>
         <p class="summary-line">「○○が1位だった」→「なぜ日本人は○○を多く訪れる？」</p>
       </div>
     </section>
 
-    <section class="slide" aria-label="9 / 14">
+    <section class="slide" aria-label="10 / 23">
       <div class="slide-inner">
-        <div class="topline"><div class="course-mark"><span class="dot"></span><span>仮説</span></div><div class="page-no">09</div></div>
+        <div class="topline"><div class="course-mark"><span class="dot"></span><span>仮説</span></div><div class="page-no">10</div></div>
         <h2 class="guide-title">仮説は「正解」ではない。</h2>
         <div class="question-panel"><p class="question-text">もしかすると、<br />＿＿＿＿だからではないか。</p></div>
         <p class="sub">まず自分なりの理由を考える。それが仮説。</p>
       </div>
     </section>
 
-    <section class="slide" aria-label="10 / 14">
+    <section class="slide" aria-label="11 / 23">
       <div class="slide-inner">
-        <div class="topline"><div class="course-mark"><span class="dot"></span><span>仮説</span></div><div class="page-no">10</div></div>
+        <div class="topline"><div class="course-mark"><span class="dot"></span><span>仮説</span></div><div class="page-no">11</div></div>
         <h2 class="guide-title">同じデータから、<br />複数の仮説が作れる。</h2>
         <div class="example-stack">
           <div class="example-row"><span class="example-label">データ</span><span class="example-copy">50代の日本人訪韓客が少ない。</span></div>
@@ -1096,9 +1217,9 @@
       </div>
     </section>
 
-    <section class="slide" aria-label="11 / 14">
+    <section class="slide" aria-label="12 / 23">
       <div class="slide-inner">
-        <div class="topline"><div class="course-mark"><span class="dot"></span><span>仮説を調べる</span></div><div class="page-no">11</div></div>
+        <div class="topline"><div class="course-mark"><span class="dot"></span><span>仮説を調べる</span></div><div class="page-no">12</div></div>
         <h2 class="guide-title">何を調べれば、<br />この仮説を確認できる？</h2>
         <div class="hypothesis-list">
           <div class="hypothesis-item"><span class="hypothesis-key">01</span><span>他の観光統計・年代別データ</span></div>
@@ -1109,9 +1230,9 @@
       </div>
     </section>
 
-    <section class="slide" aria-label="12 / 14">
+    <section class="slide" aria-label="13 / 23">
       <div class="slide-inner">
-        <div class="topline"><div class="course-mark"><span class="dot"></span><span>インサイト</span></div><div class="page-no">12</div></div>
+        <div class="topline"><div class="course-mark"><span class="dot"></span><span>インサイト</span></div><div class="page-no">13</div></div>
         <h2 class="guide-title">データとインサイトは違う。</h2>
         <div class="insight-compare">
           <div class="insight-box"><div class="label">データ・発見</div><div class="big">日本人観光客は<br />○○を多く訪れている。</div></div>
@@ -1120,9 +1241,9 @@
       </div>
     </section>
 
-    <section class="slide" aria-label="13 / 14">
+    <section class="slide" aria-label="14 / 23">
       <div class="slide-inner">
-        <div class="topline"><div class="course-mark"><span class="dot"></span><span>個人課題</span></div><div class="page-no">13</div></div>
+        <div class="topline"><div class="course-mark"><span class="dot"></span><span>個人課題</span></div><div class="page-no">14</div></div>
         <h2 class="guide-title">データに基づく韓日観光市場調査</h2>
         <div class="assignment-steps">
           <div class="assignment-step"><span class="assignment-no">01</span><span>気になるデータを見つける</span></div>
@@ -1134,11 +1255,141 @@
       </div>
     </section>
 
-    <section class="slide" aria-label="14 / 14">
+    <section class="slide" aria-label="15 / 23">
       <div class="slide-inner">
-        <div class="topline"><div class="course-mark"><span class="dot"></span><span>まとめ</span></div><div class="page-no">14</div></div>
+        <div class="topline"><div class="course-mark"><span class="dot"></span><span>まとめ</span></div><div class="page-no">15</div></div>
         <h2 class="guide-title">データは、<br />サービスのヒントになる。</h2>
         <div class="summary-axis"><span>気になる</span><span class="times">→</span><span>なぜ？</span><span class="times">→</span><span>仮説</span><span class="times">→</span><span>調査</span><span class="times">→</span><span>インサイト</span></div>
+      </div>
+    </section>
+
+    <section class="slide bonus-slide" aria-label="16 / 23" tabindex="-1">
+      <div class="slide-inner">
+        <div class="topline"><div class="course-mark"><span class="dot"></span><span>BONUS 01</span></div><div class="page-no">16</div></div>
+        <h2 class="guide-title">先週の観光政策の授業のあと…</h2>
+        <div class="content-panel">
+          <ul class="compact-list">
+            <li>日本の観光需要を地方へ分散する政策</li>
+            <li>韓国人観光客も年代・関心別に具体化</li>
+            <li>20〜30代 → 地方・小都市への旅行</li>
+            <li>50代 → ゴルフなどの高付加価値旅行</li>
+          </ul>
+        </div>
+        <p class="bonus-summary">ところが授業のあと、なぜかこんな事例が次々と目に入るようになった。</p>
+        <a class="bonus-return" href="#3" data-jump-to="3">本編へ戻る ↩</a>
+      </div>
+    </section>
+
+    <section class="slide bonus-slide" aria-label="17 / 23">
+      <div class="slide-inner">
+        <div class="topline"><div class="course-mark"><span class="dot"></span><span>BONUS 02</span></div><div class="page-no">17</div></div>
+        <h2 class="guide-title">YouTubeを見ていたら…</h2>
+        <p class="lead">「日本の地方都市・岡山の旅」</p>
+        <div class="example-stack bonus-compact">
+          <div class="example-row"><span class="example-label">移動</span><span class="example-copy">東京 → 新幹線 → 岡山</span></div>
+          <div class="example-row"><span class="example-label">岡山</span><span class="example-copy">フルーツ・カフェ・郷土料理／1泊</span></div>
+          <div class="example-row"><span class="example-label">次の旅</span><span class="example-copy">レンタカー → 香川／地域の食と体験</span></div>
+        </div>
+        <p class="bonus-summary">「あれ？ 先週見た政策と、よく似ている。」</p>
+        <a class="bonus-return" href="#3" data-jump-to="3">本編へ戻る ↩</a>
+      </div>
+    </section>
+
+    <section class="slide bonus-slide" aria-label="18 / 23">
+      <div class="slide-inner">
+        <div class="topline"><div class="course-mark"><span class="dot"></span><span>BONUS 03</span></div><div class="page-no">18</div></div>
+        <h2 class="guide-title">もしかして、観光PR動画？</h2>
+        <div class="example-stack bonus-compact">
+          <div class="example-row"><span class="example-label">表示</span><span class="example-copy">「有料プロモーションを含みます」</span></div>
+          <div class="example-row"><span class="example-label">広告</span><span class="example-copy">確認すると、韓国コスメの広告</span></div>
+          <div class="example-row"><span class="example-label">観光機関</span><span class="example-copy">招待・協賛の表示なし</span></div>
+          <div class="example-row"><span class="example-label">本人</span><span class="example-copy">カフェと旅行ルートを自分で選択</span></div>
+        </div>
+        <p class="bonus-summary">自分で選んだ旅なのに、<br />なぜ政策が目指す旅行とこれほど似ている？</p>
+        <a class="bonus-return" href="#3" data-jump-to="3">本編へ戻る ↩</a>
+      </div>
+    </section>
+
+    <section class="slide bonus-slide" aria-label="19 / 23">
+      <div class="slide-inner">
+        <div class="topline"><div class="course-mark"><span class="dot"></span><span>BONUS 04</span></div><div class="page-no">19</div></div>
+        <h2 class="guide-title">ところが、別の話も聞こえてきた</h2>
+        <p class="lead">涼しくなると、周囲の50代から聞こえてくる日本でのゴルフ旅行。</p>
+        <div class="example-stack bonus-compact">
+          <div class="example-row"><span class="example-label">01</span><span class="example-copy">「韓国でゴルフをするのは高すぎる」</span></div>
+          <div class="example-row"><span class="example-label">02</span><span class="example-copy">「遠くまで運転しなければならない」</span></div>
+          <div class="example-row"><span class="example-label">03</span><span class="example-copy">「この金額なら、日本へ行ってプレーしたほうがいい」</span></div>
+          <div class="example-row"><span class="example-label">選択</span><span class="example-copy">日本でのゴルフ旅行を繰り返し選ぶ</span></div>
+        </div>
+        <p class="bonus-summary">「あれ？ これも先週の政策に出てきた。」</p>
+        <a class="bonus-return" href="#3" data-jump-to="3">本編へ戻る ↩</a>
+      </div>
+    </section>
+
+    <section class="slide bonus-slide" aria-label="20 / 23">
+      <div class="slide-inner">
+        <div class="topline"><div class="course-mark"><span class="dot"></span><span>BONUS 05</span></div><div class="page-no">20</div></div>
+        <h2 class="guide-title">異なる旅行、似ている選択</h2>
+        <div class="columns">
+          <div class="plain-block">
+            <div class="label">20〜30代</div>
+            <div class="big">「東京・大阪には<br />もう行ったし…」</div>
+            <p class="small">→ 今度は日本の地方都市へ</p>
+          </div>
+          <div class="plain-block">
+            <div class="label">50代</div>
+            <div class="big">「韓国のゴルフは<br />高くて大変…」</div>
+            <p class="small">→ この金額なら、日本へ行こう</p>
+          </div>
+        </div>
+        <p class="bonus-summary">誰かに日本へ行くよう言われたわけではない。<br />どちらも自分で比べ、自分で選んでいる。</p>
+        <a class="bonus-return" href="#3" data-jump-to="3">本編へ戻る ↩</a>
+      </div>
+    </section>
+
+    <section class="slide bonus-slide" aria-label="21 / 23">
+      <div class="slide-inner">
+        <div class="topline"><div class="course-mark"><span class="dot"></span><span>BONUS 06</span></div><div class="page-no">21</div></div>
+        <h2 class="guide-title">でも、本当に「個人の選択」？</h2>
+        <p class="lead">観光政策は「ここへ旅行してください」と命令しない。</p>
+        <div class="five-ways bonus-actions">
+          <div class="way-item"><span class="way-no">01</span><span class="way-key">直行便</span><span class="way-q">就航させる</span></div>
+          <div class="way-item"><span class="way-no">02</span><span class="way-key">移動</span><span class="way-q">便利にする</span></div>
+          <div class="way-item"><span class="way-no">03</span><span class="way-key">価格・特典</span><span class="way-q">魅力的にする</span></div>
+          <div class="way-item"><span class="way-no">04</span><span class="way-key">情報</span><span class="way-q">必要な情報を届ける</span></div>
+          <div class="way-item"><span class="way-no">05</span><span class="way-key">イメージ</span><span class="way-q">新しい旅のイメージを見せる</span></div>
+        </div>
+        <p class="bonus-summary">すると旅行者は、<br />「これなら、ここを選ぶのもいいかもしれない」と考える。</p>
+        <a class="bonus-return" href="#3" data-jump-to="3">本編へ戻る ↩</a>
+      </div>
+    </section>
+
+    <section class="slide bonus-slide" aria-label="22 / 23">
+      <div class="slide-inner">
+        <div class="topline"><div class="course-mark"><span class="dot"></span><span>BONUS 07</span></div><div class="page-no">22</div></div>
+        <h2 class="guide-title">観光政策がつくるもの</h2>
+        <div class="policy-columns">
+          <div class="policy-column">
+            <h3>これまで</h3>
+            <p class="contrast-copy">「行きたい場所」を<br />宣伝する</p>
+          </div>
+          <div class="policy-column">
+            <h3>これから</h3>
+            <p class="contrast-copy">「行くことが合理的に感じられる場所」を設計する</p>
+          </div>
+        </div>
+        <p class="factor-line">費用・時間・アクセス・利便性・情報・特典・コンテンツ</p>
+        <p class="bonus-summary">→ 選択の条件を設計</p>
+        <a class="bonus-return" href="#3" data-jump-to="3">本編へ戻る ↩</a>
+      </div>
+    </section>
+
+    <section class="slide bonus-slide" aria-label="23 / 23">
+      <div class="slide-inner center">
+        <div class="topline"><div class="course-mark"><span class="dot"></span><span>BONUS 08｜今日のまとめ</span></div><div class="page-no">23</div></div>
+        <div class="statement bonus-final-statement">旅行者は、自分で選んでいると思っている。</div>
+        <div class="question-panel"><p class="question-text">政策は、その選択が「合理的」に感じられる環境をつくる。</p></div>
+        <a class="jump-link" href="#3" data-jump-to="3">3週目の本編へ →</a>
       </div>
     </section>
 
@@ -1204,6 +1455,16 @@
       });
 
       document.addEventListener("click", (event) => {
+        const clickedElement = event.target instanceof Element ? event.target : null;
+        const jumpLink = clickedElement?.closest("[data-jump-to]");
+        if (jumpLink) {
+          const target = Number.parseInt(jumpLink.dataset.jumpTo, 10);
+          if (Number.isFinite(target) && target >= 1 && target <= slides.length) {
+            event.preventDefault();
+            show(target - 1);
+          }
+          return;
+        }
         if (event.target.closest("a, button")) return;
         const deckRect = deck.getBoundingClientRect();
         const insideDeck = event.clientX >= deckRect.left
