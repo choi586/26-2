@@ -42,3 +42,9 @@ https://www.mlit.go.jp/kankocho/content/002003384.pdf
   https://creativecommons.org/licenses/by/4.0/
 
 釧路空港・直方の採択事業は、内容を正確に示す関係図と短い項目で掲載。
+
+- arita-hunting.jpg：幸楽窯公式サイト、トレジャーハンティングの倉庫写真。
+  https://kouraku.jp.net/experience/hunting/
+  https://kouraku.jp.net/new-site/wp-content/uploads/2025/06/af48ce114af974209efcbcb7844811e9.jpeg
+
+有田焼 × 宝探しの追加内容は、Notion 4週目「Activity直前案例」の2026-09-16更新を反映。
