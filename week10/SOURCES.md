@@ -6,8 +6,8 @@ https://www.notion.so/40afa81fdf6181159bc8e7fa2cc8bf92
 共通デザイン：week01/index.html、week02/index.html、week07/index.html、SLIDE_GUIDE.md。
 表紙の科目名61.44px・主題37.12px、固定1280×720キャンバス・キーボード操作は既存週を継承。本文30–34px、中心となる問い44px。
 
-全19枚：制作の変化 → Prototype → HTML/CSS/JavaScriptの役割 → 直接修正 → 観察・判断・指示・確認 → GitHub → MCP → 三つの方法の比較 → Prototype 1制作活動 → 振り返り → 次週UX。
-直接修正、AIに方法を聞いて自分で反映、GitHubに保存・公開、MCP接続で修正、結果比較の順を原稿どおり保持。
+全19枚：制作の変化 → Prototype → Prototype 1を作って開く → HTML/CSS/JavaScriptの役割 → 直接修正 → 観察・判断・指示・確認とAI修正 → GitHubに保存・公開 → 公開後の修正 → MCPと人の判断 → MCPで修正 → 三つの方法の比較 → 振り返り → 次週UX。
+2026-11-01のフィードバックに基づき、制作活動を5枚目に移動。原稿の活動STEP 1〜7を各説明の直後に分散し、作る前に修正を求める構成を解消。Repository作成・HTMLアップロード・Commit・公開URL確認をGitHub上の修正より先に配置。後半の重複した活動一覧はMCP実践に絞り、同じ種類の修正を比較する条件を維持。
 依頼文の例・役割の比較・GitHubの用語はすべて原稿に基づく。説明の長い列挙を簡潔な日本語に要約し、新しい機能・AI製品・手順・コード例は追加していない。
 GitHubの実践ページに、公式入口 https://github.com/ へのリンクを一つだけ設置。
 画像の添付がない概念・手順の説明は文字・比較・流れで構成。装飾画像は追加していない。
