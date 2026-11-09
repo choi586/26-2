@@ -52,3 +52,14 @@ muji-room-page.png：MUJI HOTEL GINZA公式客室ページのTYPE A部分をブ�
 https://hotel.muji.com/ginza/ja/rooms/
 
 内容・数値・画像を改変せず、公開画面の該当部分を引用。使いやすさや信頼性を実測した結果、ホテル全体の評価として提示しない。写真の美しさと実際の使いやすさを同一視せず、印象の形成を学生に問いかける構成。
+
+## 9–12枚目の説明整理（2026-11-09）
+
+9枚目は注文途中の判断が続く負担、10枚目は条件で候補数を減らすこと、11枚目は同じ10項目を意味でまとめることを明確に区別。11枚目の前後で項目を削除していない。9枚目の操作の問いは原稿に基づく説明例で、写真の注文機器の実測手順ではない。
+
+12枚目は2018年の写真から、確認時点でToss公式App Storeに掲載された紹介画面へ差し替え。
+- toss-current-home.webp：https://apps.apple.com/kr/app/id839333328
+- 原画像：https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c3/07/a1/c307a1b9-24a2-cca0-29eb-3d6e80adfc0a/0_APP_IPHONE_65_0.png/1260x2728bb.webp
+- 製品原則の公式説明（2025-09-17）：https://toss.im/tossfeed/article/tossproductprinciples
+
+ストア掲載の紹介画像であり、ログイン後の最新アプリを実機撮影したものではない。表示中の残高や取引は紹介画像内のもので、実際の利用者の情報ではない。14枚目は依頼に合わせてチャットで説明し、スライド自体は維持。
