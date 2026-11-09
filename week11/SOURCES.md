@@ -28,3 +28,20 @@
   CMAの2017–2019年の調査と改善事例として扱い、現在のBooking.com等の画面や表示を違法と断定しない。誤解を誘う表示・圧迫・追加料金の後出しを問題として示す。
 
 ホテルの比較枠・手順図は原稿の関係を示す説明用構成。保存ボタンはローカルな反応だけを示すデモ。30枚目の修正前後Screenshot枠は、学生が自分の画面を記録するための案内。
+
+## 実際のWeb画面への差し替え（2026-11-09）
+
+利用者の依頼により6・10・14・16・24枚目を実際のWeb資料中心へ変更。表紙・32枚の順序・基本文字サイズ・活動は維持。
+
+- jalan-hotel-card.png / jalan-filter-choices.png：じゃらんnet「銀座・日本橋・東京駅周辺」。実際のホテルカードと、予算・食事等の絞り込み欄をブラウザで撮影。https://www.jalan.net/130000/LRG_136200/
+- jalan-reserve-tab.png / jalan-reserve-button.png：同じホテル詳細ページの二つの予約導線。予約は実行せず公開画面のみ撮影。https://www.jalan.net/yad379411/
+  スクリーンショットの価格・評価・件数は撮影時点の表示。内容や数値を書き換えていない。飲食店87件→4件は原稿の説明例と明記し、宿泊検索画面の実測値として扱わない。
+- norman-handle.jpg：99% Invisible / Voxのノーマンドア紹介映像の場面（2016）。表示が重なる写真から、取っ手を操作する場面へ差し替え。
+  https://99percentinvisible.org/article/norman-doors-dont-know-whether-push-pull-blame-design/
+  https://99percentinvisible.org/wp-content/uploads/2016/02/norman-door-pull.jpg
+- airbnb-fees-history.jpg：NN/g「Sneaking: The Deceptive UX Pattern You Never Saw Coming」（2024）の画面記録。原図の透かし・内容を保持。2024年掲載の過去画面であることを明示し、現在のAirbnbの表示を示すものとは扱わない。
+  https://www.nngroup.com/articles/sneaking/
+  https://media.nngroup.com/media/editor/2024/10/07/connor-sneaking-airbnb.jpg
+  現行仕様との混同を避けるため、Airbnb公式の2025年料金表示案内も併記： https://news.airbnb.com/total-price-display-is-now-standard-globally/
+
+追加画像は授業で画面の構造・操作・価格の透明性を分析するための引用。画像から元資料または拡大画像を開ける。ブランドの全体的な優劣や現在の違法性を判定するものではない。
