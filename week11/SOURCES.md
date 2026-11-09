@@ -9,7 +9,7 @@
 - mcdonalds-kiosk-korea.jpg：https://www.mcdonalds.co.kr/images/story/history-2024-1.jpg
 - 掲載元：https://www.mcdonalds.co.kr/kor/story/brand/intro
 
-Google、Toss、銀行画面も画像から拡大、下部の資料名から掲載元に接続。
+導入2枚目はユーザーの依頼により画像拡大・掲載元リンクをすべて削除。画像と名称だけを表示。出典は本ファイルに記録し、後続の個別説明ページのリンクは維持。
 
 内容原本（2026-11-09確認）：https://www.notion.so/412fa81fdf6181208a04f94141537011
 
