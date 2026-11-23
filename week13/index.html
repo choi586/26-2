@@ -30,12 +30,17 @@ h1,h2,h3,p{margin:0}h1,h2,.question{text-wrap:balance}h2{font-size:52.48px;line-
     th { color: var(--muted); font-size: 23px; }
     th:first-child { width: 45%; }
 
+    .pairings { table-layout: fixed; font-size: 34px; font-variant-numeric: tabular-nums; }
+    .pairings th:first-child { width: 22%; }
+    .pairings :is(th, td) { white-space: nowrap; padding: 20px 10px; }
+    .pairings :is(th, td):not(:first-child) { text-align: center; }
+    .pairings th[scope="row"] { font-size: 30px; font-weight: 650; color: var(--ink); }
     </style>
   </head>
   <body>
     <!-- 講義原本：Notion 421fa81fdf6181c397d3fca468c4ed57 -->
     <main class="deck">
-      <section class="slide active center" aria-label="1 / 11">
+      <section class="slide active center" aria-label="1 / 12">
         <div class="slide-inner center">
           <div class="topline">
             <div class="course-mark"><span class="dot"></span><span>聖公会大学 ｜ 2026年度 後期 ｜ 13週目</span></div>
@@ -46,7 +51,7 @@ h1,h2,h3,p{margin:0}h1,h2,.question{text-wrap:balance}h2{font-size:52.48px;line-
             <p class="cover-instructor">担当 崔ナリ</p>
         </div>
       </section>
-      <section class="slide" aria-label="2 / 11">
+      <section class="slide" aria-label="2 / 12">
         <div class="slide-inner">
           <div class="topline">
             <div class="course-mark"><span class="dot"></span><span>1限 ｜ 利用者の視点</span></div>
@@ -59,7 +64,7 @@ h1,h2,h3,p{margin:0}h1,h2,.question{text-wrap:balance}h2{font-size:52.48px;line-
           </div>
         </div>
       </section>
-      <section class="slide" aria-label="3 / 11">
+      <section class="slide" aria-label="3 / 12">
         <div class="slide-inner">
           <div class="topline">
             <div class="course-mark"><span class="dot"></span><span>1限 ｜ フィードバックの例</span></div>
@@ -76,7 +81,7 @@ h1,h2,h3,p{margin:0}h1,h2,.question{text-wrap:balance}h2{font-size:52.48px;line-
           </div>
         </div>
       </section>
-      <section class="slide" aria-label="4 / 11">
+      <section class="slide" aria-label="4 / 12">
         <div class="slide-inner">
           <div class="topline">
             <div class="course-mark"><span class="dot"></span><span>1限 ｜ テストの準備</span></div>
@@ -93,11 +98,45 @@ h1,h2,h3,p{margin:0}h1,h2,.question{text-wrap:balance}h2{font-size:52.48px;line-
           </div>
         </div>
       </section>
-      <section class="slide" aria-label="5 / 11">
+      <section class="slide" aria-label="5 / 12">
         <div class="slide-inner">
           <div class="topline">
             <div class="course-mark"><span class="dot"></span><span>2限 ｜ Activity 12</span></div>
             <div class="page-no">05</div>
+          </div>
+          <div class="content">
+            <h2 id="pairing-title">ラウンドごとのペア</h2>
+            <table class="pairings" aria-labelledby="pairing-title">
+              <thead>
+                <tr>
+                  <th scope="col">ラウンド</th>
+                  <th scope="col">ペア1</th><th scope="col">ペア2</th>
+                  <th scope="col">ペア3</th><th scope="col">ペア4</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">第1ラウンド</th>
+                  <td>A1 ↔ B1</td><td>A2 ↔ B2</td><td>C1 ↔ D1</td><td>C2 ↔ D2</td>
+                </tr>
+                <tr>
+                  <th scope="row">第2ラウンド</th>
+                  <td>A1 ↔ C1</td><td>A2 ↔ C2</td><td>B1 ↔ D1</td><td>B2 ↔ D2</td>
+                </tr>
+                <tr>
+                  <th scope="row">第3ラウンド</th>
+                  <td>A1 ↔ D1</td><td>A2 ↔ D2</td><td>B1 ↔ C1</td><td>B2 ↔ C2</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+      <section class="slide" aria-label="6 / 12">
+        <div class="slide-inner">
+          <div class="topline">
+            <div class="course-mark"><span class="dot"></span><span>2限 ｜ Activity 12</span></div>
+            <div class="page-no">06</div>
           </div>
           <div class="content">
             <h2>最初の30秒</h2>
@@ -108,11 +147,11 @@ h1,h2,h3,p{margin:0}h1,h2,.question{text-wrap:balance}h2{font-size:52.48px;line-
           </div>
         </div>
       </section>
-      <section class="slide" aria-label="6 / 11">
+      <section class="slide" aria-label="7 / 12">
         <div class="slide-inner">
           <div class="topline">
             <div class="course-mark"><span class="dot"></span><span>2限 ｜ Activity 12</span></div>
-            <div class="page-no">06</div>
+            <div class="page-no">07</div>
           </div>
           <div class="content">
             <h2>使いながら、迷った瞬間を記録</h2>
@@ -126,11 +165,11 @@ h1,h2,h3,p{margin:0}h1,h2,.question{text-wrap:balance}h2{font-size:52.48px;line-
           </div>
         </div>
       </section>
-      <section class="slide" aria-label="7 / 11">
+      <section class="slide" aria-label="8 / 12">
         <div class="slide-inner">
           <div class="topline">
             <div class="course-mark"><span class="dot"></span><span>2限 ｜ Activity 12</span></div>
-            <div class="page-no">07</div>
+            <div class="page-no">08</div>
           </div>
           <div class="content">
             <h2>使い終えても残った質問</h2>
@@ -140,11 +179,11 @@ h1,h2,h3,p{margin:0}h1,h2,.question{text-wrap:balance}h2{font-size:52.48px;line-
           </div>
         </div>
       </section>
-      <section class="slide" aria-label="8 / 11">
+      <section class="slide" aria-label="9 / 12">
         <div class="slide-inner">
           <div class="topline">
             <div class="course-mark"><span class="dot"></span><span>3限 ｜ Activity 12-2</span></div>
-            <div class="page-no">08</div>
+            <div class="page-no">09</div>
           </div>
           <div class="content">
             <h2>自分たちのチームで質問を整理</h2>
@@ -157,11 +196,11 @@ h1,h2,h3,p{margin:0}h1,h2,.question{text-wrap:balance}h2{font-size:52.48px;line-
           </div>
         </div>
       </section>
-      <section class="slide" aria-label="9 / 11">
+      <section class="slide" aria-label="10 / 12">
         <div class="slide-inner">
           <div class="topline">
             <div class="course-mark"><span class="dot"></span><span>3限 ｜ 質問の読み取り</span></div>
-            <div class="page-no">09</div>
+            <div class="page-no">10</div>
           </div>
           <div class="content">
             <h2>同じ質問が何度も出たら</h2>
@@ -170,11 +209,11 @@ h1,h2,h3,p{margin:0}h1,h2,.question{text-wrap:balance}h2{font-size:52.48px;line-
           </div>
         </div>
       </section>
-      <section class="slide" aria-label="10 / 11">
+      <section class="slide" aria-label="11 / 12">
         <div class="slide-inner">
           <div class="topline">
             <div class="course-mark"><span class="dot"></span><span>3限 ｜ 対応の判断</span></div>
-            <div class="page-no">10</div>
+            <div class="page-no">11</div>
           </div>
           <div class="content">
             <h2>選んだ質問にどう対応するか</h2>
@@ -187,11 +226,11 @@ h1,h2,h3,p{margin:0}h1,h2,.question{text-wrap:balance}h2{font-size:52.48px;line-
           </div>
         </div>
       </section>
-      <section class="slide" aria-label="11 / 11">
+      <section class="slide" aria-label="12 / 12">
         <div class="slide-inner">
           <div class="topline">
             <div class="course-mark"><span class="dot"></span><span>3限 ｜ チームで決めること</span></div>
-            <div class="page-no">11</div>
+            <div class="page-no">12</div>
           </div>
           <div class="content">
             <h2>今回の修正と、次に確かめること</h2>
